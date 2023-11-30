@@ -1,0 +1,84 @@
+@model HarryMidterm.Entities.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+   <center> <h1>Delete this Product?</h1> </center>
+
+<div>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <hr />
+
+        
+    <center>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Units)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Units)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+    </center>
+    
+    <form asp-action="Delete" class="callMe">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-warning" /> |
+        <a asp-action="Index" class="btn btn-warning">Back to List</a>
+    </form>
+</div>
+
+<style>
+    body{
+        background-color: teal;
+        font-family: Verdana;
+    }
+
+    .row{
+    position:relative;
+    top: 20px;
+    left: 180px;
+    font-size: 30px;
+    font-family: verdana;
+}
+.callMe{
+      position:relative;
+    left: 510px;
+}
+
+</style>

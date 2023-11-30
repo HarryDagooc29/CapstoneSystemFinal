@@ -1,0 +1,163 @@
+@model HarryMidterm.Entities.Category
+@{
+    ViewData["Title"] = "Create a Category";
+}
+
+<html>
+    <head>
+    </head>
+    <body>
+          <button type="button" onclick="location.href='HomePage'" class="buttonHome" title="Home"> Home</button>
+          <style>
+            .buttonHome{
+      position: relative;
+      top: 10px;
+      left: 0px;
+      font-size: 25px;
+      border: 5px solid green;
+      border-radius: 8px;
+      background-color: teal;
+      width: 10rem;
+      height: 3rem;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2125;
+      color: #ffffff;
+      font-family: Inter, 'Source Sans Pro';
+      white-space: nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #3f9d54;
+      border-radius: 1rem;
+    }
+      .buttonHome:hover {
+  background-color: white; 
+  color: black;
+
+}
+
+.buttonCategoryList{
+      position: relative;
+      top: 7px;
+      left: 20px;
+      font-size: 25px;
+      border: 5px solid green;
+      border-radius: 8px;
+      background-color: teal;
+      width: 10rem;
+      height: 3rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2125;
+      color: #ffffff;
+      font-family: Inter, 'Source Sans Pro';
+      white-space: nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #3f9d54;
+      border-radius: 1rem;
+    }
+      .buttonCategoryList:hover {
+  background-color: white; 
+  color: black;
+
+}
+          </style>
+            @* <div class="butIndex">
+                @Html.ActionLink("LIST OF CATEGORY", "Index", "Category")
+            </div> *@
+             <button type="button" onclick="location.href='/Category/Index'" class="buttonCategoryList" title="Home"> Category List</button>
+            <div class="formDiv">
+                <!--<p>&#8592; Html.ActionLink("LIST OF CATEGORY", "Index", "Crud")</p>-->
+                <p><h2>@ViewData["Title"]</h2></p>
+            <form method="post">
+                <div class="nameDiv">
+                    <br>
+                  
+                    <p><input placeholder="Enter Category Name" class="nameDiv inputName" required asp-for="Name" /></p>
+                </div>
+                <div class="submitDiv">
+                <center>    <button class="button" type="submit">Submit</button></center>
+                </div>
+            </form>
+            </div>
+    </body>
+</html>
+
+<style>
+    *{
+        padding: 0;
+        margin : 0;
+    }
+
+    .formDiv
+    {
+        display: flex;
+        flex-wrap : wrap;
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid white;
+        border-radius : 10px;
+        max-width: 350px;
+        min-width: 150px;
+        align-items: center;
+        justify-content: center;
+        margin : auto;
+        background-color: white;
+    }
+
+    body
+    {
+        background: teal;
+    }
+
+    .nameDiv
+    {
+        padding: 2px;
+        width: 300px;
+        border-radius : 10px;
+    }
+
+    .inputNameLabel
+    {
+        font-weight: bold;
+    }
+
+    h2
+    {
+        margin-top: 10px;
+    }
+
+    .button
+    {
+        padding: 2px;
+        border-radius : 10px;
+        width: 180px
+        background-color: black;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button:hover
+    {
+        background-color: darkkhaki;
+    }
+
+    .butIndex a
+    {
+        padding: 7px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border: 2px solid mediumseagreen;
+        background-color: gray;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .butIndex a:hover
+    {
+        color: black;
+    }
+</style>

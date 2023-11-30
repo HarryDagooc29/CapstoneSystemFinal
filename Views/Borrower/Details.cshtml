@@ -1,0 +1,267 @@
+@model HarryMidterm.Entities.Newborrower
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmp/D1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> *@
+
+@* <div class="colorMe">
+<center>
+<h2>Borrower Information</h2>
+</center>
+<hr />
+<dl class="row">
+<div class="col-sm-6">
+
+<dt>
+@Html.DisplayNameFor(model => model.LastName)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.LastName)
+</dd>
+<dt>
+@Html.DisplayNameFor(model => model.FirstName)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.FirstName)
+</dd>
+<dt>
+@Html.DisplayNameFor(model => model.MiddleName)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.MiddleName)
+</dd>
+<dt>
+@Html.DisplayNameFor(model => model.BirthDate)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.BirthDate)
+</dd>
+<dt>
+@Html.DisplayNameFor(model => model.BirthPlace)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.BirthPlace)
+</dd>
+<dt>
+@Html.DisplayNameFor(model => model.Sex)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.Sex)
+</dd>
+<dt>
+@Html.DisplayNameFor(model => model.City)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.City)
+</dd>
+<dt>
+@Html.DisplayNameFor(model => model.Province)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.Province)
+</dd>
+<dt>
+</div>
+<div class="col-sm-6">
+
+
+@Html.DisplayNameFor(model => model.ZipCode)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.ZipCode)
+</dd>
+
+<dt>
+@Html.DisplayNameFor(model => model.Nationality)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.Nationality)
+</dd>
+
+
+<dt>
+@Html.DisplayNameFor(model => model.MaritalStatus)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.MaritalStatus)
+</dd>
+
+<dt>
+@Html.DisplayNameFor(model => model.Occupation)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.Occupation)
+</dd>
+
+<dt>
+@Html.DisplayNameFor(model => model.Salary)
+</dt>
+<dd>
+@Html.DisplayFor(model => model.Salary)
+</dd>
+
+
+
+
+</div>
+</dl>
+</div>
+<div> *@
+
+<div class="topMostLayer">
+
+
+    <div class="colorMe">
+        <center>
+            <h2>Borrower Information</h2>
+        </center>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">Last Name</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.LastName)</dd>
+
+            <dt class="col-sm-3">First Name</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.FirstName)</dd>
+
+            <dt class="col-sm-3">Middle Name</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.MiddleName)</dd>
+
+            <dt class="col-sm-3">Birth Date</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.BirthDate)</dd>
+
+            <dt class="col-sm-3">Birth Place</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.BirthPlace)</dd>
+
+            <dt class="col-sm-3">Sex</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.Sex)</dd>
+
+            <dt class="col-sm-3">City</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.City)</dd>
+
+            <dt class="col-sm-3">Province</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.Province)</dd>
+
+            <dt class="col-sm-3">Zip Code</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.ZipCode)</dd>
+
+            <dt class="col-sm-3">Nationality</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.Nationality)</dd>
+
+            <dt class="col-sm-3">Marital Status</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.MaritalStatus)</dd>
+
+            <dt class="col-sm-3">Occupation</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.Occupation)</dd>
+
+            <dt class="col-sm-3">Salary</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Salary)</dd>
+
+        </dl>
+    </div>
+
+
+
+    <a asp-action="Index" asp-route-id="@Model.NewBorrowerId" class="btn btn-outline-warning backMove" title="Back"><i
+            class="fa-solid fa-backward" style="color: #4ac4b6;"></i> Back</a>
+
+</div>
+</div>
+
+
+<style>
+    .topMostLayer {
+        padding-top: 50px;
+    }
+
+    .editMove {
+        position: absolute;
+        top: 10px;
+        left: 230px;
+    }
+
+    .backMove {
+        position: absolute;
+        top: 10px;
+        left: 140px;
+    }
+
+    body {
+    @*background-image:url("../../building.png");background-color:transparent;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(25px);background-size:cover;background-image:no-repeat;*@background-color: #4aac5f;
+    }
+
+    @*.colorMe{color:white;font-family:times'TimesNewRoman',Times,serif;font-size:20px;}*@.colorMe {
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    hr {
+        border: 1px solid #ccc;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #e5e5e5;
+    }
+
+    dl.row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    dt,
+    dd {
+        flex-basis: 48%;
+        padding: 10px;
+    @*margin-bottom:10px;*@background-color: #f9f9f9;
+
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin: 0;
+    }
+</style>

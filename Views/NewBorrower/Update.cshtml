@@ -1,0 +1,28 @@
+@model HarryMidterm.Entities.Newborrower
+@{
+    ViewData["Title"] = "Co-Maker Update";
+}
+
+<html>
+<body>
+    
+    <div class="formDiv">
+     
+        <form asp-action="Update">
+            <input type="hidden" asp-for="NewBorrowerId"/>
+            <div class="nameDiv">
+                
+                    
+            </div>
+            <div class="submitDiv">
+                <center>
+                    <button class="btn btn-outline-warning" value="Update" type="submit">Submit</button>
+                </center>
+            </div>
+            </center>
+
+        </form>
+    </div>
+    </body>
+</html>
+

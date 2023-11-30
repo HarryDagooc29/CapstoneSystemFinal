@@ -1,0 +1,995 @@
+
+
+
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<head>
+  <!-- Add this line to include SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<head>
+  <!-- Add this line to include Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<script>
+  // get the logged status
+  if(sessionStorage.getItem("Logged")==="false" || sessionStorage.getItem("Logged")==undefined || sessionStorage.getItem("Logged")==null){
+    location.href = '/LoginPage/SignIn'
+  }
+</script>
+
+
+<br>
+@* @Html.ActionLink("Create Product", "Create", "Product") // SweetAlert.com is like Span*@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Homepage</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600" />
+  @* <link rel="stylesheet" href="./styles/homepage.css"/> *@
+</head>
+
+<body>
+
+  <div class="homepage-mus">
+
+    <div class="auto-group-qkgm-Ah7">
+      <div class="auto-group-n425-Nwb">
+
+        <div class="auto-group-nm1b-hiy">
+
+
+  
+          <div class="ellipse-3-e8R">
+            <img class="harryPic" src="../../logo.png" width="200" height="115" />
+         
+            <div class="logout-icon">
+              <span class="logout-text">Logout?</span>
+            </div>
+
+    
+          </div>
+          <style>
+            .harryPic:hover {
+              cursor: pointer;
+            }
+
+            .crmcPic {
+              position: absolute;
+              border-radius: 7px;
+              top: ;
+              left: -40px;
+            }
+            .capitalIcon{
+              position: absolute;
+              cursor: pointer;
+              left: 60px;
+              top: 130px;
+              font-size: 50px;
+            }
+            .merchandiseIcon{
+              position: absolute;
+              cursor: pointer;
+              left: 60px;
+              top: 438px;
+              font-size: 40px;
+            }
+            .loanIcon{
+               position: absolute;
+              cursor: pointer;
+              left: 60px;
+              top: 338px;
+              font-size: 40px;
+            }
+          </style>
+
+
+
+        </div>
+        <div class="auto-group-ehkw-fpD">
+
+          <p class="accounting-staff-awB">Accounting Staff</p>
+          <p class="john-harry-dagooc-Dz9">John Harry Dagooc</p>
+        </div>
+      </div>
+      @* <div class="auto-group-51ld-7pd">Home</div> *@
+
+      @* <div class="Capital">
+        <button type="button" onclick="capitalAlert()" class="buttonCapital"> Capital</button>
+      </div> *@
+
+
+        <div class="Capital">
+
+  <button type="button" onclick="capitalAlert()" class="buttonCapital">
+     Capital
+  </button>
+  
+</div>
+      <div class="capitalIcon" type="button" onclick="capitalAlert()">
+      💰
+      </div>
+
+
+
+         <div class="AddLoanRecords">
+        <button type="button" onclick="addLoanRecordsAlert()" class="buttonAddLoanRecords">Add Loan </button>
+      </div>
+      <div class="loanIcon" type="button" onclick="addLoanRecordsAlert()">
+        📝
+      </div>
+
+<script>
+function addLoanRecordsAlert() {
+  Swal.fire({
+    title: 'Welcome to Add Loan Records',
+    text: 'You have entered the Add Loan Records page!',
+    icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+      window.location.href = '/LoginPage/AddLoan';
+    }
+  }
+  );
+}
+</script>
+
+      <div class="Category">
+
+       
+         <button type="button" onclick="merchandiseAlert()" class="buttonMerchandise"> Merchandise</button>
+         <div class="merchandiseIcon" type="button" onclick="merchandiseAlert()">
+      🛍️
+         </div>
+      </div>
+      <script>
+        function showConfirmation() {
+          var confirmation = window.confirm("Do you want to LOGOUT?");
+
+          if (confirmation) {
+            sessionStorage.setItem("Logged",false)
+            location.href = "/LoginPage/Signin";
+
+          } else {
+
+          }
+
+
+        }
+
+        document.querySelector('.ellipse-3-e8R').addEventListener('click', function () {
+          showConfirmation()
+
+        });
+
+
+      </script>
+      <style>
+        .buttonAddLoanRecords
+        {
+        position: absolute;
+          top: 333px;
+          left: 44px;
+          font-size: 25px;
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.3rem;
+          height: 7.7rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+          background-color: #3f9d54;
+          border-radius: 1rem;
+        }
+
+        .buttonAddLoanRecords:hover {
+          background-color: white;
+          color: black;
+
+        }
+        .buttonLoanRecords
+        {
+        position: absolute;
+          top: 133px;
+          left: 44px;
+          font-size: 25px;
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.3rem;
+          height: 7.7rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+          background-color: #3f9d54;
+          border-radius: 1rem;
+        }
+
+        .buttonLoanRecords:hover {
+          background-color: white;
+          color: black;
+
+        }
+        .ellipse-3-e8R {
+          position: relative;
+          display: inline-block;
+        }
+
+        .logout-icon {
+          position: absolute;
+          top: -14px;
+          left: -40%;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          display: none;
+        }
+
+        .logout-text {
+          font-weight: bold;
+        }
+
+        .logout-button,
+        .cancel-button {
+          margin: 5px;
+          padding: 5px 10px;
+          cursor: pointer;
+        }
+
+
+
+        body {
+          background-color: #4aac5f;
+          padding: 0;
+          width: 140rem;
+          height: fit-content;
+
+        @*background-image:url("../../building.png");background-size:cover;*@
+        }
+
+        .harryPic {
+          position: absolute;
+          border-radius: 100px;
+          left: -40px;
+        }
+        .buttonCapital {
+          position: absolute;
+          top: 133px;
+          left: 44px;
+          font-size: 25px;
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.3rem;
+          height: 7.7rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+          background-color: #3f9d54;
+          border-radius: 1rem;
+        }
+
+        .buttonCapital:hover {
+          background-color: white;
+          color: black;
+
+        }
+        .buttonMerchandise {
+          position: absolute;
+          top: 433px;
+          left: 44px;
+          font-size: 25px;
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.3rem;
+          height: 7.7rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+          background-color: #3f9d54;
+          border-radius: 1rem;
+        }
+
+        .buttonMerchandise:hover {
+          background-color: white;
+          color: black;
+
+        }
+
+        .buttonBorrowerInfo {
+          position: absolute;
+          text-decoration: none;
+          top: 420px;
+          left: 44px;
+          font-size: 25px;
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.3rem;
+          height: 7.7rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+          background-color: #3f9d54;
+          border-radius: 1rem;
+
+        }
+
+        .buttonBorrowerInfo:hover {
+          background-color: white;
+          color: black;
+
+        }
+
+        .buttonLoanRecords {
+          position: absolute;
+          text-decoration: none;
+          top: 233px;
+          left: 44px;
+          
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.6rem;
+          height: 7.8rem;
+          @* font-size: 2rem; *@
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+          background-color: #3f9d54;
+          border-radius: 1rem;
+        }
+
+        .buttonLoanRecords:hover {
+          background-color: white;
+          color: black;
+
+        }
+
+        .buttonAllReports {
+          position: absolute;
+          text-decoration: none;
+          top: 533px;
+          left: 44px;
+          @* font-size: 20px; *@
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.6rem;
+          height: 7.8rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+          background-color: #3f9d54;
+          border-radius: 1rem;
+        }
+
+        .buttonAllReports:hover {
+          background-color: white;
+          color: black;
+
+        }
+        .moveMe{
+          position: absolute;
+          font-size: 20px;
+         top: 24px;
+          left: 64px;
+        }
+        .borrowerInfoIcon{
+           position: absolute;
+              cursor: pointer;
+              left: 60px;
+              top: 240px;
+              font-size: 40px;
+
+        }
+        .reportsIcon{
+           position: absolute;
+              cursor: pointer;
+              left: 60px;
+              top: 538px;
+              font-size: 40px;
+        }
+        
+      </style>
+
+     
+
+      @* <div class="auto-group-axjy-wYm"></div>
+      <div class="ProductList">
+        <button type="button" onclick="location.href='/LoginPage/BorrowerInformation'" class="buttonBorrowerInfo">
+          Add Loan Record</button>
+      </div> *@
+      
+      <div class="auto-group-g2mx-zmw"></div>
+      @* <button type="button" onclick="location.href='/Borrower/Index'" class="buttonLoanRecords">Loan Records</button> *@
+      <button type="button" onclick="showSweetAlert()" class="buttonLoanRecords"> <p class="moveMe">Borrower Information</p> </button>
+      <div class="borrowerInfoIcon" type="button" onclick="showSweetAlert()">
+      📊
+      </div>
+      
+<script>
+function capitalAlert() {
+  Swal.fire({
+    title: 'Welcome to Capital',
+    text: 'You have entered the Capital page!',
+    icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+      window.location.href = '/LoginPage/Capital';
+    }
+  }
+  );
+}
+  
+</script>
+
+<script>
+function showSweetAlert() {
+  Swal.fire({
+    title: 'Welcome to Loan Records',
+    text: 'You have entered the Loan Records page!',
+    icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+      window.location.href = '/Borrower/Index';
+    }
+  }
+  );
+}
+</script>
+
+<script>
+function merchandiseAlert() {
+  Swal.fire({
+    title: 'Welcome to Merchandise',
+    text: 'You have entered the Merchandise page!',
+    icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+      window.location.href = '/Product/Index';
+    }
+  }
+  );
+}
+</script>
+
+<script>
+function reportsAlert() {
+  Swal.fire({
+    title: 'Welcome to Reports',
+    text: 'You have entered the Reports page!',
+    icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+      window.location.href = '/LoginPage/AllReports';
+    }
+  }
+  );
+}
+</script>
+  
+
+  
+      <button type="button" onclick="reportsAlert()" class="buttonAllReports">Reports</button>
+      <div class="reportsIcon type="button" onclick="reportsAlert()"">
+    📈
+      </div>
+     
+
+
+
+
+      
+
+    </div>
+    <div class="auto-group-f62d-F7X">
+      <div class="auto-group-urdk-B1B">Dashboard</div>
+      <p class="cebu-roosevelt-memorial-colleges-evM">CEBU ROOSEVELT MEMORIAL COLLEGES</p>
+      <img src="../../logo.png" class="logo" width="450" height="300">
+      <style>
+        .logo {
+          position: absolute;
+          top: 160px;
+        }
+
+        .tableContainer {
+          position: absolute;
+          top: 488px;
+
+
+        }
+
+        .categoryList th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: center;
+          background-color: darkseagreen;
+          color: black;
+          font-family: verdana;
+        }
+
+        .categoryList {
+
+          overflow: hidden;
+          border-collapse: collapse;
+          text-align: center;
+          width: 100%;
+        }
+
+        .categoryList td,
+        .categoryList th {
+
+          padding: 40px;
+          font-size: 14px;
+          font-family: verdana;
+
+        }
+
+        .categoryList td {
+          cursor: pointer;
+        }
+
+        .categoryList tr:nth-child(even) {
+          background-color: teal;
+        }
+
+        .categoryList tr:hover {
+          background-color: green;
+          color: white;
+        }
+
+        .categoryList tr {
+          background-color: #f8f8f8;
+        }
+
+        /* Category List Boundary*/
+      </style>
+
+      <body>
+        <div class="tableContainer">
+          <table class="categoryList" style="border-radius : 10px" ;>
+            <tr>
+              <th>ID</th>
+              <th>Capital</th>
+              <th>Date</th>
+              <th>Income</th>
+              <th>Interest</th>
+
+
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>50,000</td>
+              <td>09/29/23</td>
+              <td>300</td>
+              <td>3%</td>
+
+            </tr>
+
+
+
+            @* @foreach (var item in Model)
+            {
+            <tr>
+            <td>@item.LoginId</td>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+            <td>
+            <a class="but butUpdate" asp-action="update" asp-route-id="@item.LoginId">UPDATE</a>
+            |
+            <a class="but butDelete" asp-action="delete" asp-route-id="@item.LoginId">DELETE</a>
+            </td>
+            </tr>
+            } *@
+          </table>
+        </div>
+
+
+      </body>
+
+
+
+
+    </div>
+  </div>
+  </div>
+  @* @Html.ActionLink("Create Product", "Create", "Product") *@
+</body>
+
+
+
+@* <link rel="stylesheet" href="Homepage.css"> *@
+
+<style>
+  html {
+    font-size: 62.5%;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  input {
+    border: none;
+  }
+
+  .homepage-mus {
+
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    background-color: none;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 {
+    /*Dashboard*/
+    margin-right: 3.5rem;
+
+    box-sizing: border-box;
+    padding: 1.1rem 0.8rem 3.3rem 4rem;
+    width: 38.2rem;
+    height: 69rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #307d41;
+    border-radius: 1rem;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb {
+    margin-bottom: 0.6rem;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb .auto-group-nm1b-hiy {
+    margin-right: 0.3rem;
+    width: 11.6rem;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb .auto-group-nm1b-hiy .ellipse-3-e8R {
+    width: 10.9rem;
+    height: 10.9rem;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.4rem;
+    background-color: #409d54;
+    border-radius: 5.45rem;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb .auto-group-nm1b-hiy .icons8-user-96-1-kBT {
+    width: 11.6rem;
+    height: 11.6rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    vertical-align: top;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb .auto-group-ehkw-fpD {
+
+    margin: 4.1rem 0rem 2.8rem 0rem;
+    width: 21.5rem;
+    height: calc(100% - 6.9rem);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb .auto-group-ehkw-fpD .accounting-staff-awB {
+
+    width: 15.9rem;
+    height: 2.5rem;
+    position: absolute;
+    left: 0px;
+    top: -45px;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb .auto-group-ehkw-fpD .john-harry-dagooc-Dz9 {
+
+    width: 21.5rem;
+    height: 2.8rem;
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+  }
+
+  .homepage-mus .auto-group-qkgm-Ah7 .auto-group-51ld-7pd {
+    margin: 0rem 3.3rem 4.1rem 0rem;
+    width: 29.3rem;
+    height: 7.7rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f9d54;
+    border-radius: 1rem;
+    flex-shrink: 0;
+  }
+
+
+
+  .homepage-mus .auto-group-f62d-F7X {
+    /*Right Dashboard*/
+    margin-top: 0.8rem;
+    width: 90rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-urdk-B1B {
+    position: relative;
+    left: -15px;
+    margin: 0rem 0rem 3.4rem 0.7rem;
+    box-sizing: border-box;
+    padding: 0.7rem 1.3rem;
+    width: 81rem;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #307d41;
+    border-radius: 1rem;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .cebu-roosevelt-memorial-colleges-evM {
+    position: relative;
+    margin: 0rem 0rem 42.8rem 0rem;
+    left: -10px;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-ry33-ZnR {
+    margin: 0rem 0.9rem 3.4rem 0rem;
+    height: 10.2rem;
+    display: flex;
+    column-gap: 9rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-ry33-ZnR .auto-group-1q5f-so7 .borrower-information-oRs {
+    margin-bottom: 0.7rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-ry33-ZnR .auto-group-1q5f-so7 .item-18-hn9 {
+    margin-right: 1.5rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-ry33-ZnR .auto-group-tugu-1Xw .loan-reports-KHj {
+    margin-bottom: 0.7rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-ry33-ZnR .auto-group-tugu-1Xw .item-18-dpD {
+    margin-right: 1rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-ry33-ZnR .auto-group-udih-9nZ .transaction-reports-syT {
+    position: relative;
+
+    margin-bottom: 0.7rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-ry33-ZnR .auto-group-udih-9nZ .item-27-1pm {
+    margin-left: 1.8rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-tds1-iz5 {
+    margin: 0rem 16.6rem 0rem 14rem;
+    width: calc(100% - 30.6rem);
+    height: 10.2rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-tds1-iz5 .auto-group-l7nh-qoo .sales-and-inventory-xdX {
+
+    margin-bottom: 0.7rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-tds1-iz5 .auto-group-l7nh-qoo .item-18-hLD {
+    margin-right: 1.4rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-tds1-iz5 .auto-group-p3r3-cTB .accounting-staff-accounts-NSM {
+    position: relative;
+    top: -80px;
+    width: 14.8rem;
+    height: 4.4rem;
+    position: absolute;
+    left: 3.4rem;
+    top: 0.7rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+  }
+
+  .homepage-mus .auto-group-f62d-F7X .auto-group-tds1-iz5 .auto-group-p3r3-cTB .item-6-TTo {
+
+    width: 2.3rem;
+    height: 4.3rem;
+    position: absolute;
+    left: 9.6rem;
+    top: 4.3rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+  }
+</style>

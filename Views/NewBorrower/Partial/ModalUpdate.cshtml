@@ -1,0 +1,36 @@
+@model HarryMidterm.Entities.Newborrower
+@{
+    ViewData["Title"] = "Co-Maker Update";
+}
+<template id="categoryOptionTemplate">
+    <option value=""></option>
+</template>
+<!-- Modal -->
+
+
+<div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+
+            <div class="modal-body createContent">
+      
+                <form id="addProdForm">
+
+                    <div class="form-group">
+                        <label name="CoMaker" class="control-label">Co-Maker Name</label>
+                        <input name="CoMaker" class="CoMakerNameField" style="width: 18rem;" />
+                    </div>
+                    <br>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                            id="updateProdBtn">Save Changes</i></button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

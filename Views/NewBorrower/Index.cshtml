@@ -1,0 +1,299 @@
+@model List<HarryMidterm.Entities.Newborrower>
+<!--List<int> primeNumbers = new List<int>();-->
+@{
+    ViewData["Title"] = "Borrower Records";
+}
+
+<center>
+    <h2>@ViewData["Title"]</h2>
+</center>
+ @* @Html.Partial("Partial/ModalCreate") *@
+@* @Html.Partial("Partial/ModalUpdate")  *@
+
+<button type="button" onclick="location.href='/LoginPage/HomePage'" class="buttonHome" title="Home"> Home</button>
+<button type="button" class="buttonCreate" onclick="location.href='/Newborrower/Create'" title="Create" > Create</button>
+  @* <button type="button" class="buttonAddCategory" title="Home"  data-bs-toggle="modal" data-bs-target="#modalCreate"> Create Category</button> *@
+  @* <button type="button" onclick="location.href='/Newborrower/Create'" class="buttonCreate" data-bs-toggle="modal" data-bs-target="#modalCreate"  title="Create">Create</button> *@
+  <style>
+    .buttonCreate{
+        position: relative;
+      top: 10px;
+      left: 975px;
+      font-size: 25px;
+      border: 5px solid green;
+      border-radius: 8px;
+      background-color: teal;
+      width: 10rem;
+      height: 3rem;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2125;
+      color: #ffffff;
+      font-family: Inter, 'Source Sans Pro';
+      white-space: nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #3f9d54;
+      border-radius: 1rem;
+    }
+     .buttonCreate:hover {
+  background-color: white; 
+  color: black;
+
+}
+    .buttonHome{
+      position: relative;
+      top: 10px;
+      left: 0px;
+      font-size: 25px;
+      border: 5px solid green;
+      border-radius: 8px;
+      background-color: teal;
+      width: 10rem;
+      height: 3rem;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2125;
+      color: #ffffff;
+      font-family: Inter, 'Source Sans Pro';
+      white-space: nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #3f9d54;
+      border-radius: 1rem;
+    }
+      .buttonHome:hover {
+  background-color: white; 
+  color: black;
+
+}
+    .buttonAddCategory{
+      position: relative;
+       top: 5px;
+      left: 0px;
+      font-size: 25px;
+      border: 5px solid green;
+      border-radius: 8px;
+      background-color: teal;
+      width: 10rem;
+      height: 3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.2125;
+      color: #ffffff;
+      font-family: Inter, 'Source Sans Pro';
+      white-space: nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #3f9d54;
+      border-radius: 1rem;
+    }
+      .buttonAddCategory:hover {
+  background-color: white; 
+  color: black;
+
+}
+  </style>
+
+
+  
+    <body>
+        <div class="tableContainer">
+            <table class="borrowerList" style="border-radius : 10px";>
+                <tr>
+                <th>ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Occupation</th>
+                <th>Salary</th>
+                 
+                    
+                <th>Action</th>
+
+                </tr>
+                <form action="post">
+            @foreach (var item in Model)
+            {
+                <tr>
+                <td>@item.NewBorrowerId</td>
+                <td>@item.LastName</td>
+                 <td>@item.FirstName</td>
+                <td>@item.MiddleName</td>
+                 <td>@item.Occupation</td>
+                <td>@item.Salary</td>
+                
+                
+                <td>
+                
+                 @* <a class="btn btn-success" asp-action="update" asp-route-id="@item.NewBorrowerId">UPDATE</a> *@
+                <a class="btn btn-success" asp-action="Update" asp-route-id="@item.NewBorrowerId">Update</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.NewBorrowerId">Delete</a>
+                <a class="btn btn-warning" asp-action="Print" asp-route-id="@item.NewBorrowerId">Print</a>
+               
+                </td>
+                </tr>
+            }
+            </form>
+            </table>
+
+            
+        </div>
+    </body>
+
+   
+
+
+@* <script>
+    //Save Added Category
+   $("#saveCategoryButton").click((e) => {
+      var arrData = {};
+
+      var formInputs = $("#addProdForm").serializeArray();
+      formInputs.forEach(function (item) {
+        arrData[item.name] = item.value;
+      });
+      //save using ajax
+      $.ajax
+        ({
+          url: "../api/newapi/addProduct",
+          type: "POST",
+          data:
+          {
+            p: arrData
+          },
+        })
+        .done(function () {
+          document.querySelector(".parent").innerHTML = "";
+          populateIndex();
+      
+
+        });
+
+      $("#modalCreate").modal("toggle");
+      $("#addProdForm")[0].reset();
+    });
+
+</script>   *@
+
+<style>
+    .tableContainer{
+        position: relative;
+        top: 20px;
+    }
+    .borrowerList th
+    {
+        
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: darkseagreen;
+        color: black;
+        font-family: verdana;
+    }
+
+    .borrowerList 
+    {
+        border-radius : 30px 30px 30px 30px;
+        overflow: hidden;
+        border-collapse: collapse;
+
+        text-align: center;
+        width: 100%;
+    }
+
+    .borrowerList td, .borrowerList th
+    {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-family: verdana;
+        
+    }
+
+    .borrowerList tr:nth-child(even){background-color: teal;}
+    .borrowerList tr:hover {background-color: gray;}
+
+    .borrowerList tr
+    {
+        background-color: #f8f8f8;
+    }
+
+    body
+    {
+        background: teal;
+    }
+
+    *
+    {
+        padding: 0;
+        margin : 0;
+    }
+
+    .butUpdate
+    {
+        width: 100px;
+        border-radius : 10px;
+        background: #04AA6D;
+
+        color: white;
+    }
+
+    .butUpdate:hover
+    {
+        background-color: #00d680
+    }
+
+    .butDelete
+    {
+        width: 100px;
+        border-radius : 10px;
+        background: darkolivegreen;
+        color : white;
+    }
+
+    .butDelete:hover
+    {
+        background: yellowgreen;
+    }
+
+    .but
+    {
+        padding: 7px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .butCreate a
+    {
+        padding: 7px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        color: white;
+        border: 2px solid mediumseagreen;
+        background-color: gray;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .butCreate a:hover
+    {
+        color: black;
+    }
+</style>
+
+
+<script>
+     //UPDATE PRODUCT CHANGES
+    $("#updateProdBtn").click((e) => {
+      var arrData = {};
+
+      var formInputs = $("#updateProdForm").serializeArray();
+      formInputs.forEach(function (item) {
+        arrData[item.CoMaker] = item.CoMaker;
+      });
+
+    
+      
+</script>

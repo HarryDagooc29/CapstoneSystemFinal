@@ -1,0 +1,43 @@
+@model HarryMidterm.Entities.Category
+@{
+    ViewData["Title"] = "Category Update";
+}
+
+<html>
+   
+    <body>
+            <div class="butIndex">
+                @Html.ActionLink("Category List", "Index", "Category")
+                
+            </div>
+            <div class="formDiv">
+              
+                <p><h2>@ViewData["Title"]</h2></p>
+            <form asp-action="Update">
+                <input type="hidden" asp-for="Id"/>
+                <div class="nameDiv">
+                    <center>
+                    <br>
+                    <label class="nameDiv inputNameLabel" asp-for="Name">Category name</label>
+                   <center> <p><input placeholder="Input category name" class="nameDiv inputName" required asp-for="Name" /></p></center>
+                </div>
+                <div class="submitDiv">
+                    <center>
+                    <button class="submitDiv subBut" type="submit">Submit</button>
+                    </center>
+                </div>
+                </center>
+
+            </form>
+            </div>
+    </body>
+</html>
+
+<style>
+body{
+    background-color: teal;
+    font-family: verdana;
+}
+
+
+</style>

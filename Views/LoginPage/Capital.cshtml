@@ -1,0 +1,178 @@
+@model HarryMidterm.Entities.Capital
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Addition Loan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+  integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #4aac5f;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 10px;
+            
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        p {
+            color: #666666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .capital {
+            position: absolute;
+            top: 20px;
+            color: white;
+            background-color: green;
+            border-radius: 8px;
+            padding-left: 500px;
+            padding-right: 400px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+  
+<script>
+    function redirectToHome() {
+        // Display SweetAlert confirmation before redirecting
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You are about to go to the home page.',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#4ac4b6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, go to Home!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // If confirmed, redirect to the home page
+                window.location.href = '/LoginPage/HomePage';
+            }
+        });
+    }
+</script>
+
+
+<div>
+      <button type="button" onclick="redirectToHome()" class="btn btn-outline-warning buttonHome" title="Home"> 
+    <i class="fa-solid fa-house" style="color: #4ac4b6;"></i> Home
+</button>
+</div>
+
+<style>
+    .buttonHome{
+        position: absolute;
+        top: 80px;
+        left: 120px;
+        background-color: green;
+        font-size: 20px;
+    }
+</style>
+
+<div>
+    <h1 class="capital">Capital Addition Loan</h1>
+
+   <div class="container">
+    <p>Need additional capital for your business or personal needs? We've got you covered!</p>
+    <p>Enter the amount you need below and click 'Apply Now' to get started:</p>
+
+    <form id="loanForm" class="small-form" method="post">
+        <input type="number" id="capitalAmount" placeholder="Enter capital amount" required style="width: 100%;" required asp-for="CapitalAmount">
+        <button type="button" value="Capital" onclick="applyCapital()" style="width: 100%;">Apply Now</button>
+    </form>
+    
+
+
+</div>
+
+
+
+    <script>
+        function applyCapital() {
+            // Get the loan amount from the input field
+           // var formelements = $("#loanForm");
+           // var formInputs = $("#loanForm").serializeArray();
+            const capitalAmount = document.getElementById('capitalAmount').value;
+
+            // Check if the loan amount is valid (you can add more validation here)
+            if (capitalAmount.trim() === '' || isNaN(capitalAmount)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Input',
+                    text: 'Please enter a capital loan amount.',
+                });
+                return;
+            }
+
+            // If the input is valid, show a confirmation popup
+            Swal.fire({
+                icon: 'success',
+                title: 'Loan Application Submitted!',
+                text: `You have successfully applied for a capital amount of  ₱${capitalAmount}.`,
+            });
+
+            // You can add additional logic here to submit the form to your server
+            // For example, using AJAX to send the data to a server-side script
+        }
+    </script>
+
+    
+
+
+
+</body>
+
+</html>

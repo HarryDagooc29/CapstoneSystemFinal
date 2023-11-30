@@ -1,0 +1,194 @@
+@model HarryMidterm.Entities.Newborrower
+
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+
+
+<center>
+    <h4 style="font-size: 40px; color: white;">Update Borrower Information</h4>
+</center>
+<hr />
+
+<div class="row container-fluid ">
+    <div class="col-md-12">
+        <form asp-action="Edit"  >
+            <div asp-validation-summary="ModelOnly" class="text-    danger"></div>
+            <input type="hidden" asp-for="NewBorrowerId" />
+            <div class="row">
+                <div class="col-sm-6">
+                    <label asp-for="LastName" class="control-label" style="color: white;"></label>
+                    <input asp-for="LastName" class="form-control"  />
+                    @* <input asp-for="LastName" class="form-control" hidden /> *@
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="col-sm-6">
+                    <label asp-for="FirstName" class="control-label" style="color: white;"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <input asp-for="FirstName" class="form-control" hidden/>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <label asp-for="MiddleName" class="control-label"style="color: white;"></label>
+                    <input asp-for="MiddleName" class="form-control"  />
+                    <input asp-for="MiddleName" class="form-control" hidden/>
+                    <span asp-validation-for="MiddleName" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="BirthDate" class="control-label"style="color: white;"></label>
+                    <input asp-for="BirthDate" class="form-control" />
+                    <input asp-for="BirthDate" class="form-control" hidden/>
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-6">
+                    <label asp-for="BirthPlace" class="control-label" style="color: white;"></label>
+                    <input asp-for="BirthPlace" class="form-control"  />
+                    <input asp-for="BirthPlace" class="form-control" hidden/>
+                    <span asp-validation-for="BirthPlace" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="Sex" class="control-label" style="color: white;"></label>
+                    <input asp-for="Sex" class="form-control" />
+                    <input asp-for="Sex" class="form-control" hidden/>
+                    <span asp-validation-for="Sex" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-6">
+                    <label asp-for="City" class="control-label" style="color: white;"></label>
+                    <input asp-for="City" class="form-control"  />
+                    <input asp-for="City" class="form-control" hidden/>
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="Province" class="control-label" style="color: white;"></label>
+                    <input asp-for="Province" class="form-control"  />
+                    <input asp-for="Province" class="form-control" hidden/>
+                    <span asp-validation-for="Province" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="ZipCode" class="control-label" style="color: white;"></label>
+                    <input asp-for="ZipCode" class="form-control"  />
+                    <input asp-for="ZipCode" class="form-control" hidden />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="Nationality" class="control-label" style="color: white;"></label>
+                    <input asp-for="Nationality" class="form-control"  />
+                    <input asp-for="Nationality" class="form-control" hidden />
+                    <span asp-validation-for="Nationality" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="MaritalStatus" class="control-label" style="color: white;"></label>
+                    <input asp-for="MaritalStatus" class="form-control"  />
+                    <input asp-for="MaritalStatus" class="form-control" hidden />
+                    <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="Occupation" class="control-label" style="color: white;"></label>
+                    <input asp-for="Occupation" class="form-control"  />
+                    <input asp-for="Occupation" class="form-control" hidden />
+                    <span asp-validation-for="Occupation" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="Salary" class="control-label" style="color: white;"></label>
+                    <input asp-for="Salary" class="form-control"  />
+                    <input asp-for="Salary" class="form-control" hidden />
+                    <span asp-validation-for="Salary" class="text-danger"></span>
+                </div>
+
+                
+
+
+            </div>
+
+            @* Border *@
+
+            <div class="form-group">
+
+                @* <button type="submit" value="Save" class="btn btn-outline-warning editMove" title="Update"> <i
+                        class="fa-solid fa-pen-to-square" style="color: #4ac4b6;"></i>  Update Changes </button> *@
+
+                <button type="Submit" value="Save" onclick="showSweetAlert()" title="Update" class="btn btn-outline-warning editMove"> <i
+                        class="fa-solid fa-pen-to-square" style="color: #4ac4b6;"></i> Update Changes</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <button type="button" onclick="location.href='/Borrower/Index'" class="btn btn-outline-warning backMove"
+        title="Back"> <i class="fa-solid fa-backward" style="color: #4ac4b6;"></i> Back </button>
+
+</div>
+
+
+<script>
+function showSweetAlert() {
+  Swal.fire({
+    title: 'Update',
+    text: 'Successfully Updated!',
+    icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+          event.preventDefault();
+      window.location.href = '/Borrower/Index';
+    
+    
+    }
+  });
+}
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .editMove {
+        position: absolute;
+        top: 10px;
+        left: 250px;
+    }
+
+    .backMove {
+        position: absolute;
+        top: 10px;
+        left: 140px;
+
+    }
+
+    body {
+    background-image: url("../../building.png");
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(25px); 
+    background-size: cover;
+    background-image: no-repeat;
+    }
+</style>

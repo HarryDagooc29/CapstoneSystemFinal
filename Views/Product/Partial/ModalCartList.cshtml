@@ -1,0 +1,115 @@
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+
+  <div class="modal fade" id="modalCart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" id="modalCartClose" class="btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body infoCart d-flex justify-content-center">
+          <template id="card-container-cart">
+              <div class="card cardsdd" style="width: 18rem;">
+              <center><h4><div class="card-title">
+              </div></h4></center>
+              <hr/>
+              <strong>
+                  <center>
+                  <div class="card-body"></div>
+                  <a class="btn stockMinus" id="stockMinus">-</a>
+                  <a class="card-stock text-decoration-none"></a>
+                  </a>
+                  <a class="btn stockPlus" id="stockPlus">+</a> <!--For stock minus and plus : make this button bigger.!-->
+                  </center>
+              </strong>
+              <strong>
+                <div class="card-mockTotal"></div>
+              </strong>
+              <hr/>
+                  <a class="btn btn-warning deleteCart" title="Delete">
+                  <i class="fa-solid fa-trash fa-beat-fade" style="color: #c11010;"></i>
+                  </a>
+
+              </div>
+          </template>
+          <div class="parentCart"></div>
+          <br>
+          <div class = "vertical"></div>
+          <div>
+              <div class="x subTotal"></div>
+              <br/>
+              <label name="" class="control-label labelCart">Discount</label>
+              <input type="number" id="inputDiscount" class="discountField"  style="width: 18rem;"/>
+
+              <style>
+                    .discountField{
+                      position: relative;
+                    }
+              </style>
+          <br>
+          <br>
+              <label name="" class="control-label labelCart">Payment</label>
+              <input type="number" id="inputPayment" class="paymentField" style="width: 18rem;"/>
+            <style>
+                    .paymentField{
+                      position: relative;
+                    }
+              </style>
+              <br/>
+              <div class="x deduction"></div>
+              <div class="x orderTotal"></div>
+              <div class="x sukli" id="sukliID"></div>
+          </div>
+          <br>
+        </div>
+        <div class="modal-footer">
+              <button class="card-link btn btn-success checkoutBtn" id="checkoutBtn" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top" title="Checkout"> 
+              Checkout
+              </button>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+@* <script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("checkoutBtn").addEventListener("click", generateReceipt);
+});
+
+function generateReceipt() {
+  // Get the elements you need for the receipt.
+ 
+  const subTotal = document.querySelector(".subTotal").textContent;
+  const discount = document.getElementById("inputDiscount").value || 0;
+  const payment = document.getElementById("inputPayment").value || 0;
+  const deduction = subTotal - discount;
+  const orderTotal = deduction > 0 ? deduction : 0;
+  const sukli = payment - orderTotal;
+
+  // Create the receipt content.
+  const receiptContent = `
+
+    <h2>Receipt</h2>
+    <hr>
+   
+    <div style="font-size: 30px;">${subTotal}</div>
+    <div style="font-size: 30px;">Discount: ${discount}</div>
+    <div style="font-size: 30px;">Deduction: ${deduction}</div>
+    <div style="font-size: 30px;">Order Total: ${orderTotal}</div>
+    <div style="font-size: 30px;">Sukli: ${sukli}</div>
+ 
+  `;
+
+  // Create a new window or a modal to display the receipt.
+  const receiptWindow = window.open("", "_blank");
+  receiptWindow.document.write(receiptContent);
+
+
+}
+</script> *@

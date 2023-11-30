@@ -1,0 +1,415 @@
+@model HarryMidterm.Entities.Login
+
+<html>
+  @Html.Partial("Partial/ModalRegister")
+  
+  
+    <body>
+           
+      
+            <div class="formDiv">
+                <!--<p>&#8592; Html.ActionLink("LIST OF CATEGORY", "Index", "Crud")</p>-->
+                <p><h2>@ViewData["Title"]</h2></p>
+            <form method="post">
+                <div class="nameDiv">
+                    <br>
+                 
+                    @* <p><input placeholder="Enter Usernmae" class="usernameField" required asp-for="Username" /></p> *@
+                </div>
+
+            </form>
+            </div>
+    </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600"/>
+  <link rel="stylesheet" href="./styles/login.css"/>
+  
+ 
+</head>
+
+
+
+<center>
+<body>
+<div class="login-AiD">
+   <img src="../../logo.png" class="logo" width="220" height="150">
+  <p class="username-yQm">Username</p>
+  @* <p><input placeholder="Enter Category Name" class="nameDiv inputName" required asp-for="Name" /></p> *@
+   <p class="passwordLabel">Password</p>
+
+    @* <p class="forgot-password-VGd">Forgot Password?</p> *@
+
+ @* <a href="ForgotPassword" class="forgot-password-VGd" > Forgot Password? </a> *@
+
+
+  @* <p class="new-here-register-BfF">New Here</p>
+   <a href="Register" class="registerLabelButton" data-bs-toggle="modal" data-bs-target="#modalSignin"> Register? </a> *@
+
+
+  <div class="auto-group-bc49-Gwb">LOGIN</div>
+  <div class="rectangle-100-h1K">
+  </div>
+  <div class="rectangle-101-QwK"> 
+  </div>
+
+  
+ <p><input placeholder="Enter Username" class="usernameField" required asp-for="Username" /></p>
+   <p><input type="password" placeholder="Enter Password" class="passwordField" required asp-for="Password" /></p>
+  <div class="submitDiv">
+             
+                 
+                  <button type="button" class ="button" onclick="location.href= 'HomePage'"> <b> Sign in </b></button>
+               
+                </div>
+</div>
+
+<script>
+  const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+mongoose.connect('harrymidtermdb://localhost/Signin', { useNewUrlParser: true, useUnifiedTopology: true });
+
+const User = mongoose.model('User', {
+    Username: String,
+    Password: String,
+});
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+app.post('/signup', async (req, res) => {
+    const { Username, Password } = req.body;
+
+    try {
+        const user = new User({ Username, Password });
+        await user.save();
+        res.send('Signup successful!');
+    } catch (error) {
+        res.status(500).send('Error signing up');
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+</script>
+
+
+<style>
+  body{
+   
+   
+    background-color: gray;
+  }
+  .logo{
+    position: absolute;
+    top: 100px;
+    left: 320px;
+  }
+  .button{
+    position: absolute;
+    top: 600px;
+    left: 274px;
+    width: 30.4rem;
+    height: 7.7rem;
+    white-space: nowrap;
+    border-radius: 1rem;
+    font-family: 'Source Sans Pro';
+    border-radius: 4px;
+    font-size: 30px;
+    background-color: #409d54;  
+    color: black;
+  }
+  .button:hover {
+  background-color: white; /* Green */
+
+}
+
+.usernameField{
+  position: absolute;
+    top: 300px;
+    left: 18px;
+    white-space: nowrap;
+    font-family: inherit;
+    border-radius: 4px;
+    font-size: 25px;
+    width: 81rem;
+  height: 6rem;
+  background-color: #409d54;
+  border-radius: 1rem;
+}
+.passwordField{
+  position: absolute;
+    top: 420px;
+    left: 18px;
+    white-space: nowrap;
+    font-family: inherit;
+    border-radius: 4px;
+    font-size: 25px;
+    width: 81rem;
+  height: 6rem;
+  background-color: #409d54;
+  border-radius: 1rem;
+}
+
+</style>
+
+ 
+</body>
+</center>
+
+
+
+<style>
+    
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  
+  width: 85.2rem;
+}.login-AiD {
+  width: 100%;
+  height: 89.2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #307d41;
+  border-radius: 1rem;
+}
+  .username-yQm {
+    position: absolute;
+    top: 37.3rem;
+    font-size: 3rem;
+    line-height: 1.2125;
+    color: #f6f6f6;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    width: 14.9rem;
+    height: 3.7rem;
+    left: 2.1rem;
+    font-weight: 600;
+  }
+  .password-CYR {
+    font-weight: 600;
+    line-height: 1.2125;
+    font-family: Inter, 'Source Sans Pro';
+    position: absolute;
+    left: 2.1rem;
+    top: 51.6rem;
+    color: #f6f6f6;
+    white-space: nowrap;
+    width: 14.3rem;
+    height: 3.7rem;
+    font-size: 3rem;
+  }
+  .forgot-password-VGd {
+    height: 2.5rem;
+    position: absolute;
+    left: 65.7rem;
+    top: 65.9rem;
+    font-size: 2rem;
+    line-height: 1.2125;
+    width: 17.4rem;
+    font-weight: 600;
+    color: #f6f6f6;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+  }
+  .new-here-register-BfF {
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    left: 0rem;
+    top: 68rem;
+    font-size: 3rem;
+    line-height: 1.2125;
+    color: #f6f6f6;
+    width: 31.8rem;
+    height: 3.7rem;
+    position: absolute;
+    font-weight: 600;
+  }
+  .auto-group-bc49-Gwb {
+
+    white-space: nowrap;
+    background-color: #409d54;
+    height: 5.1rem;
+    position: absolute;
+    left: 2.1rem;
+    font-size: 3rem;
+    color: #ffffff;
+    display: flex;
+    border-radius: 1rem;
+    width: 81rem;
+    top: 1rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    font-family: Inter, 'Source Sans Pro';
+    align-items: center;
+    justify-content: center;
+  }
+  .rectangle-100-h1K {
+    width: 81rem;
+    height: 7.7rem;
+    position: absolute;
+    left: 2.1rem;
+    top: 42.4rem;
+    background-color: #409d54;
+    border-radius: 1rem;
+  }
+  .rectangle-101-QwK {
+    width: 81rem;
+    height: 7.7rem;
+    position: absolute;
+    left: 2.1rem;
+    top: 56.1rem;
+    background-color: #409d54;
+    border-radius: 1rem;
+  }
+ 
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  
+  width: 85.2rem;
+}
+.login-AiD { /*Login Background*/
+  position: absolute;
+  left: 320px;
+  width: 100%;
+  height: 70rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #307d41;
+  border-radius: 1rem;
+}
+.login-AiD .username-yQm {/* Userame Label*/
+  width: 14.9rem;
+  height: 3.7rem;
+  position: absolute;
+  left: 2.1rem;
+  top: 25rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  color: #f6f6f6;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.login-AiD .passwordLabel {/* Password Label*/
+  width: 14.3rem;
+  height: 3.7rem;
+  position: absolute;
+  left: 2.1rem;
+  top: 37rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  color: #f6f6f6;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.login-AiD .forgot-password-VGd { /* ForgotPassword Label*/
+  width: 17.4rem;
+  height: 2.5rem;
+  position: absolute;
+  left: 57rem;
+  top: 53rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  color: #f6f6f6;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+
+}
+.login-AiD .new-here-register-BfF { /* Register Label*/
+  width: 31.8rem;
+  height: 3.7rem;
+  position: absolute;
+  left: -6rem;
+  top: 53rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  color: #f6f6f6;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.registerLabelButton{
+   width: 31.8rem;
+  height: 3.7rem;
+  position: absolute;
+  left: 9rem;
+  top: 53rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2125;
+  color: #f6f6f6;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
+
+.login-AiD .rectangle-100-h1K { /* Username Field*/
+  width: 81rem;
+  height: 6rem;
+  position: absolute;
+  left: 2.1rem;
+  top: 30rem;
+  background-color: #409d54;
+  border-radius: 1rem;
+}
+.login-AiD .rectangle-101-QwK { /* Password Field*/
+  width: 81rem;
+  height: 6rem;
+  position: absolute;
+  left: 2.1rem;
+  top: 42rem;
+  background-color: #409d54;
+  border-radius: 1rem;
+}
+
+
+</style>

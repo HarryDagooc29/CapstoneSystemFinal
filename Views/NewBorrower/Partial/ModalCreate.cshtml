@@ -1,0 +1,67 @@
+<template id="categoryOptionTemplate">
+  <option value=""></option>
+</template>
+<!-- Modal -->
+
+
+<div class="modal fade" id="modalCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+     
+      <div class="modal-body createContent">
+        <form id="addProdForm" >
+           
+            <div class="col-sm">
+                <label name="" class="control-label">Last Name</label>
+                <input name="LastName" class="form-control"style="width: 18rem;" placeholder="Co-Maker Name" />
+              
+            </div>
+             <div class="col-sm">
+              <label name="" class="control-label">First Name</label>
+                <input name="FirstName" class="form-control"style="width: 18rem;" placeholder="Co-Maker Name" />
+              </div>
+            <br>
+            <style>
+        
+              .productNameField{
+                position: relative;
+                top: 30px;
+                left: -115px;
+                width: 18px;
+                height: 35px;
+                border-radius: 5px;
+               
+                
+              }
+               .productNameField:focus{
+                @* outline: 2px solid green; *@
+                border: 2px solid green;
+               }
+            </style>
+           
+       
+          <br>
+            <style>
+              .unitsField{
+                position: relative;
+                top: 27px;
+                left: -40px;
+                width: 18px;
+                height: 35px;
+                border-radius: 5px;
+                
+              }
+            </style>
+
+            
+           <div class="modal-footer">
+        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>!-->
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="saveCategoryButton" >Save Changes</i></button>
+      </div>
+          
+        </form>
+      </div>
+   
+    </div>
+  </div>
+</div>

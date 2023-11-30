@@ -1,0 +1,226 @@
+@model HarryMidterm.Entities.Newborrower
+
+
+<html>
+<body>
+
+
+    <button type="button" onclick="location.href='/LoginPage/HomePage'" class="buttonHome" title="Home"> Home</button>
+     <button type="button" onclick="location.href='/NewBorrower/Index'" class="buttonBack" title="Back"> Back</button>
+    <style>
+        .buttonBack{
+        position: relative;
+      top: 10px;
+      left: 975px;
+      font-size: 25px;
+      border: 5px solid green;
+      border-radius: 8px;
+      background-color: teal;
+      width: 10rem;
+      height: 3rem;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2125;
+      color: #ffffff;
+      font-family: Inter, 'Source Sans Pro';
+      white-space: nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #3f9d54;
+      border-radius: 1rem;
+    }
+     .buttonBack:hover {
+  background-color: white; 
+  color: black;
+
+}
+        .buttonHome {
+            position: relative;
+            top: 10px;
+            left: 0px;
+            font-size: 25px;
+            border: 5px solid green;
+            border-radius: 8px;
+            background-color: teal;
+            width: 10rem;
+            height: 3rem;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2125;
+            color: #ffffff;
+            font-family: Inter, 'Source Sans Pro';
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #3f9d54;
+            border-radius: 1rem;
+        }
+
+        .buttonHome:hover {
+            background-color: white;
+            color: black;
+
+        }
+
+        .buttonCategoryList {
+            position: relative;
+            top: 7px;
+            left: 20px;
+            font-size: 25px;
+            border: 5px solid green;
+            border-radius: 8px;
+            background-color: teal;
+            width: 10rem;
+            height: 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.2125;
+            color: #ffffff;
+            font-family: Inter, 'Source Sans Pro';
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #3f9d54;
+            border-radius: 1rem;
+        }
+
+        .buttonCategoryList:hover {
+            background-color: white;
+            color: black;
+
+        }
+    </style>
+
+ 
+    <div class="container">
+
+        <p>
+        <h2>@ViewData["Title"]</h2>
+        </p>
+        <form method="post">
+            <div class="row">
+
+
+                <div class="col-sm">
+                    <p><input placeholder="Last Name" class="form-control name" required asp-for="LastName" /></p>
+                    <p><input placeholder="First Name" class="form-control" required asp-for="FirstName" /></p>
+                    <p><input placeholder="Middle Name" class="form-control" required asp-for="MiddleName" /></p>
+                    <p><input type="date" placeholder="Birthdate" class="form-control" required asp-for="BirthDate" />
+                    </p>
+                    <p><input placeholder="Birthplace" class="form-control" required asp-for="BirthPlace" /></p>
+
+
+                    <p><select required asp-for="Sex" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </p>
+                    <p><input placeholder="City" class="form-control" required asp-for="City" /></p>
+                    <p><input placeholder="Province" class="form-control" required asp-for="Province" /></p>
+                    <p><input placeholder="ZipCode" class="form-control" required asp-for="ZipCode" /></p>
+                   
+
+                </div>
+
+                <div class="col-sm">
+
+
+                    @* <p><input placeholder="Marital Status" class="form-control" required asp-for="MaritalStatus" /></p> *@
+                     <p><input placeholder="Nationality" class="form-control" required asp-for="Nationality" /></p>
+                    <p><select required asp-for="MaritalStatus" class="form-control" title="Loan Type">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Widowed">Widowed</option>
+                            
+
+                        </select>
+                    </p>
+                    <p><input placeholder="Occupation" class="form-control" required asp-for="Occupation" /></p>
+                    <p><input placeholder="Salary" class="form-control" required asp-for="Salary" /></p>
+                    
+                </div>
+
+            </div>
+            <div class="submitDiv">
+
+                <center><button class="btn btn-outline-warning" type="submit">Submit</button></center>
+
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .formDiv {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid white;
+        border-radius: 10px;
+        max-width: 650px;
+        min-width: 200px;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        background-color: white;
+    }
+
+    body {
+        background: teal;
+    }
+
+    .nameDiv {
+        padding: 2px;
+        width: 300px;
+        border-radius: 10px;
+    }
+
+    .inputNameLabel {
+        font-weight: bold;
+    }
+
+    h2 {
+        margin-top: 10px;
+    }
+
+    .button {
+        padding: 2px;
+        border-radius: 10px;
+        width: 180px background-color: black;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button:hover {
+        background-color: darkkhaki;
+    }
+
+    .butIndex a {
+        padding: 7px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border: 2px solid mediumseagreen;
+        background-color: gray;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .butIndex a:hover {
+        color: black;
+    }
+</style>

@@ -1,0 +1,72 @@
+@model HarryMidterm.Entities.Product
+
+@{
+    ViewData["Title"] = "Add Stocks";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          
+    
+    <form asp-action="AddStock">
+        <input type="hidden" asp-for="Category" />
+        <input type="hidden" asp-for="Name" />
+        <input type="hidden" asp-for="Units" />
+        <input type="hidden" asp-for="Price" />
+        <input type="hidden" asp-for="Status" />
+        <input type="hidden" name="cStock" value="@Model.Stock" />
+        <input type="hidden" name="dateVal" value="@DateTime.Now">
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>@Model.Name</h5>
+                    <br>
+                    Current Stock : @Model.Stock
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <center>
+                    <label asp-for="Stock" class="control-label"></label>
+                    <input type="number" placeholder="Input stocks to add" name="Stock" class="form-control" />
+                    <span asp-validation-for="Stock" class="text-danger"></span>
+                    </center>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <center>
+                    <input type="submit" value="Save" class="btn btn-warning" />
+                    </center>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+<style>
+    body{
+        background-color: teal;
+        font-family: verdana;
+    }
+     .card{
+        top: 20px;
+        position: relative;
+        
+      
+    }
+</style>

@@ -1,0 +1,95 @@
+@model HarryMidterm.Entities.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <div>
+         <center>  <h2>@ViewData["Title"]</h2> </center> 
+        <center>
+            <dl class="row boxz">
+                
+           
+                <dt class = "fgroup col-sm-2">
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+                <dd class = "fgroup col-sm-10">
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+                <dt class = "fgroup col-sm-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class = "fgroup col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class = "fgroup col-sm-2">
+                    @Html.DisplayNameFor(model => model.Units)
+                </dt>
+                <dd class = "fgroup col-sm-10">
+                    @Html.DisplayFor(model => model.Units)
+                </dd>
+                <dt class = "fgroup col-sm-2">
+                    @Html.DisplayNameFor(model => model.Stock)
+                </dt>
+                <dd class = "fgroup col-sm-10">
+                    @Html.DisplayFor(model => model.Stock)
+                </dd>
+                <dt class = "fgroup col-sm-2">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class = "fgroup col-sm-10">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+                <dt class = "fgroup col-sm-2">
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+                <dd class = "fgroup col-sm-10">
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <br><br>
+                <div class="buttonDown">
+                   
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    
+                    <a class="btn btn-warning" asp-action="Index">Back to List</a>
+                    
+                </div>
+            </dl>
+        </div>
+        </center>
+</body>
+</html>
+
+<style>
+
+body{
+    background-color: teal;
+    font-family: verdana;
+}
+
+.row.boxz{
+    position:relative;
+    top: 20px;
+    left: 180px;
+    font-size: 30px;
+    font-family: verdana;
+}
+.btn.btn-warning{
+    position:relative;
+    left: -200px;
+}
+</style>

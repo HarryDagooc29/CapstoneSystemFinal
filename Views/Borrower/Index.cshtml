@@ -1,0 +1,244 @@
+@model IEnumerable<HarryMidterm.Entities.Newborrower>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<html>
+    <script>
+    $(document).ready(function () {
+        $('.tableContainer').DataTable({
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "searching": true
+        });
+    });
+</script>
+
+</html>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+  integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+@* @Html.Partial("Partial/UpdateModal") *@
+<center>
+<h1 style="color: white;" class="colorMe">Borrower Records</h1>
+
+</center>
+
+
+<p>
+    @* <a asp-action="Create">Create New</a> *@
+    
+    <button type="button" onclick="location.href='/LoginPage/HomePage'" class="btn btn-outline-warning buttonHome" title="Home"> <i class="fa-solid fa-house" style="color: #4ac4b6;"></i> Home</button>
+     <button type="button" onclick="location.href='/Borrower/Create'" class="btn btn-outline-warning loanMove" title="Add Employee-Borrower"> <i class="fa-solid fa-plus" style="color: #4ac4b6"></i>Add Employee</button>
+     <style>
+       
+        .colorMe{
+            top: 10px;
+            position: relative;
+            background-color: #307d41;
+            width: 1400px;
+            border-radius: 7px;
+            color: white;
+       
+        }
+        .loanMove{
+            position: absolute;
+            top: 70px;
+            left: 1365px;
+            height: 50px;
+        }
+        .buttonHome{
+             position: absolute;
+                top: 70px;
+            font-size: 25px;
+        }
+       
+        
+
+        
+     </style>
+</p>
+<div class="tumoy">
+<table class="tableContainer" style="border-radius: 10px; ">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiddleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Province)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaritalStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Occupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiddleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthPlace)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Province)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaritalStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Occupation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.NewBorrowerId" class="btn btn-outline-warning" title="Update"><i class="fa-solid fa-pen-to-square" style="color: #4ac4b6;"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.NewBorrowerId" class="btn btn-outline-warning" title="Details"><i class="fa-solid fa-circle-info" style="color: #4ac4b6;"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.NewBorrowerId" class="btn btn-outline-danger" title="Delete"><i class="fa-solid fa-trash" style="color: #4ac4b6;"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+ 
+
+<style>
+     body{
+
+
+     background-color: #4aac5f;
+    
+    }
+  
+    @* .tableContainer{
+        
+        color: white;
+        font-family: times 'Times New Roman', Times, serif;
+        background-color: teal;
+        
+    } *@
+
+   .tableContainer {
+    
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: teal;
+}
+
+.tableContainer table {
+    border-collapse: collapse;
+    padding-right: 500px;
+}
+
+.tableContainer table th, .tableContainer table td {
+    
+    padding: 8px;
+    border: 1px solid white;
+    text-align: left;
+}
+
+.tableContainer table th {
+   
+    background-color: darkcyan;
+}
+
+.tableContainer table tr:hover {
+    
+    background-color: white;
+    color: teal; /* You may need to adjust the text color for better visibility */
+}
+
+
+
+    
+    .tumoy{
+            
+        padding-top: 80px;
+        
+        
+    }
+    
+   
+
+
+    
+</style>
+

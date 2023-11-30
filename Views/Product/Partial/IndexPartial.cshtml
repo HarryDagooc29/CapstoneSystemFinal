@@ -1,0 +1,49 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+<body>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <form id="indexForm">
+            <template id="card-container">
+            <div class="card" style="width: 15rem; display: inline-block; margin-right: 10px; margin-bottom: 20px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+        color: rgb(29, 26, 26);">
+            <center><h4><div class="card-title">
+            </div></h4></center>
+            <hr/>
+            <div class="card-body">
+            </div>
+            <hr/>
+ <center>
+            <a class="card-link btn btn-warning updateProd" data-bs-toggle="tooltip" data-bs-placement="top"><i class="fa-solid fa-pen-to-square fa-beat-fade" style="color: #1f4908;"></i></a>
+            <a class="btn btn-warning infoProd"><i class="fa-solid fa-circle-info fa-beat-fade" style="color: #216f1f;"></i></a>
+            <a class="btn btn-warning addStock"><i class="fa-solid fa-cubes-stacked fa-beat-fade" style="color: #723308;"></i></a>
+            <a class="btn btn-warning stockHistory"><i class="fa-solid fa-clock-rotate-left fa-beat-fade" style="color: #1b7e39;"></i></a> 
+            <a class="btn btn-warning deleteProd"><i class="fa-solid fa-trash fa-beat-fade" style="color: #c11010;"></i></a>
+            <a class="btn btn-warning addCart"><i class="fa-solid fa-cart-plus fa-beat-fade" style="color: #0a579e;"></i></a></center>
+          
+        </div>
+    </template>
+    <div class="parent">
+
+    </div>
+    </form>
+</body>
+</html>
+
+<style>
+body{
+    background-color: teal;
+}
+</style>

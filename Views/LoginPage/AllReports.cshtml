@@ -1,0 +1,257 @@
+@model List<HarryMidterm.Entities.Login>
+<!--List<int> primeNumbers = new List<int>();-->
+
+@{
+    ViewData["Title"] = "Category List";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@* <center>
+<h2>@ViewData["Title"]</h2>
+</center> *@
+
+@* <div class="butCreate">
+@Html.ActionLink("Create Category", "Create", "Category")
+</div> *@
+
+<body>
+    <div class="background">
+        
+        <div class="reportLabel">
+            Reports
+        </div>
+    </div>
+    <button type="button" onclick="location.href='HomePage'" class="btn btn-outline-warning buttonHome" title="Home"> <i
+            class="fa-solid fa-house" style="color: #4ac4b6;"></i> Home</button>
+
+ 
+        @* <img src="" alt="Avatar" class="image" style="width:100%"> *@
+        <button  type="button" onclick="location.href='SalesReports'" class="buttonSalesReports" title="Sales Reports">
+            Sales Reports</button>
+
+    <button type="button" onclick="location.href='LoanReports'" class="buttonLoanReports" title="Loan Reports"> Loan
+        Reports</button>
+    <button type="button" onclick="location.href='TransactionReports'" class="buttonTransactionReports"
+        title="Transaction Reports"> Transaction
+        Reports</button>
+    @* <button type="button" onclick="location.href='DelinquentReports'" class="buttonDelinquentReports"
+        title="Delinquent Reports"> Delinquent Reports
+    </button> *@
+    <style>
+
+        .background{
+            position: absolute;
+            height: 60px;
+            top: 20px;
+            background-color: green;
+            width: 1370px;
+            border-radius: 8px;
+        }
+        .reportLabel{
+            position: absolute;
+            color: white;
+            font-size: 50px;
+            left: 600px;
+            height: 50px;
+            top: -12px; 
+            width: 1370px;
+          
+           
+        }
+        .text {
+            background-color: #04AA6D;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+
+        .buttonHome {
+            position: relative;
+            top: 90px;
+            left: 10px;
+            font-size: 25px;
+             background-color: green;
+            color: #ffffff;
+            font-family: Inter, 'Source Sans Pro';
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            
+
+        }
+
+
+
+        body {
+            @* background-image: url("../../building.png");
+         background-size: cover; *@
+           background-color: #4aac5f;
+            
+        }
+
+        @* .buttonSalesReports {
+            position: absolute;
+            top: 75px;
+            left: 120px;
+            font-size: 25px;
+            border: 5px solid green;
+            border-radius: 8px;
+            background-color: teal;
+            width: 350px;
+            height: 630px;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2125;
+            color: #ffffff;
+            font-family: Inter, 'Source Sans Pro';
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #3f9d54;
+            border-radius: 1rem;
+        }
+
+        .buttonSalesReports:hover {
+            background-color: white;
+            color: black;
+
+        } *@
+
+        .buttonSalesReports {
+    position: absolute;
+    top: 150px;
+    left: 120px;
+    font-size: 25px;
+    border: 5px solid green;
+    border-radius: 8px;
+    background-color: teal;
+    width: 350px;
+    height: 630px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f9d54;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttonSalesReports:hover {
+    background-color: white;
+    color: white;
+    background-image: url('../../harry.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+        .buttonLoanReports {
+            position: absolute;
+            top: 150px;
+            left: 500px;
+            font-size: 25px;
+            border: 5px solid green;
+            border-radius: 8px;
+            background-color: teal;
+            width: 600px;
+            height: 300px;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2125;
+            color: #ffffff;
+            font-family: Inter, 'Source Sans Pro';
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #3f9d54;
+            border-radius: 1rem;
+        }
+
+        .buttonLoanReports:hover {
+          background-color: white;
+    color: white;
+    background-image: url('../../harry.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+        }
+
+        .buttonTransactionReports {
+            position: absolute;
+            top: 480px;
+            left: 500px;
+            font-size: 25px;
+            border: 5px solid green;
+            border-radius: 8px;
+            background-color: teal;
+            width: 600px;
+            height: 300px;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2125;
+            color: #ffffff;
+            font-family: Inter, 'Source Sans Pro';
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #3f9d54;
+            border-radius: 1rem;
+        }
+
+        .buttonTransactionReports:hover {
+           background-color: white;
+    color: white;
+    background-image: url('../../harry.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+        }
+
+        .buttonDelinquentReports {
+            position: absolute;
+            top: 150px;
+            left: 1130px;
+            font-size: 25px;
+            border: 5px solid green;
+            border-radius: 8px;
+            background-color: teal;
+            width: 350px;
+            height: 630px;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2125;
+            color: #ffffff;
+            font-family: Inter, 'Source Sans Pro';
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #3f9d54;
+            border-radius: 1rem;
+        }
+
+        .buttonDelinquentReports:hover {
+           background-color: white;
+    color: white;
+    background-image: url('../../harry.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+        }
+    </style>
+</body>

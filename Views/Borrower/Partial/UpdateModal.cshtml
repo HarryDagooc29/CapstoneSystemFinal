@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog d-flex justify-content-center">
+        <div class="modal-content w-75">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Update Co-Maker's Name</h5>
+                @* <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button> *@
+            </div>
+            <div class="modal-body p-4">
+                <form>
+                   
+                    <div class="form-group">
+                        <label for="CoMaker" class="control-label">Co-Maker Name</label>
+                        <input id="CoMaker" class="form-control" />
+                        @* <span asp-validation-for="LastName" class="text-danger"></span> *@
+                    </div>
+                  <br>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-outline-info" value="Save" >Update Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

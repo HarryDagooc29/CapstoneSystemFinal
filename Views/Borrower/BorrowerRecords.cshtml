@@ -1,0 +1,165 @@
+@model IEnumerable<HarryMidterm.Entities.Newborrower>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<html>
+    <script>
+    $(document).ready(function () {
+        $('.tableContainer').DataTable({
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "searching": true
+        });
+    });
+</script>
+
+</html>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+  integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+@* @Html.Partial("Partial/UpdateModal") *@
+<center>
+<h1 style="color: white;">Loan Records</h1>
+</center>
+<p>
+    @* <a asp-action="Create">Create New</a> *@
+    
+    <button type="button" onclick="location.href='/LoginPage/HomePage'" class="btn btn-outline-warning buttonHome" title="Home"> <i class="fa-solid fa-house" style="color: #4ac4b6;"></i> Home</button>
+     <button type="button" onclick="location.href='/Borrower/Create'" class="btn btn-outline-warning loanMove" title="Add Loan Records"> <i class="fa-solid fa-plus" style="color: #4ac4b6"></i></button>
+     <style>
+        .loanMove{
+            position: absolute;
+            top: 10px;
+            left: 1375px;
+        }
+        .buttonHome{
+             position: absolute;
+            top: 10px;
+            font-size: 25px;
+        }
+
+        
+     </style>
+</p>
+<table class="tableContainer" style="border-radius : 10px";>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiddleName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Occupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+          
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Occupation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+          
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NewBorrowerId"class="btn btn-outline-warning" title="Update"><i class="fa-solid fa-pen-to-square" style="color: #4ac4b6;"></i></a>
+              
+                @* <button asp-action="Edit" asp-route-itemid="@item.NewBorrowerId" onclick="showSweetAlert()" title="Update" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square" style="color: #4ac4b6;"></i></button> *@
+                <a asp-action="Details" asp-route-id="@item.NewBorrowerId"class="btn btn-outline-warning" title="Details"><i class="fa-solid fa-circle-info" style="color: #4ac4b6;"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.NewBorrowerId" class="btn btn-outline-danger" title="Delete"><i class="fa-solid fa-trash" style="color: #4ac4b6;"></i></a>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ @* <button type="button" onclick="showSweetAlert()" class="buttonLoanRecords">Loan Records</button> *@
+      
+
+    @* Unfinished Script *@
+@* <script>
+function showSweetAlert() {
+  Swal.fire({
+    title: 'Update Record',
+    text: 'You can only update the Co-Maker's Name!',
+    icon: 'info', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+      window.location.href = '/Borrower/Edit';
+    
+    }
+  });
+}
+</script> *@
+
+<style>
+     body{
+
+       /*background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,110,1) 13%, rgba(5,157,167,1) 96%, rgba(2,191,222,1) 100%, rgba(0,212,255,1) 100%);*/
+    background-image: url("../../building.png"); 
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(25px); 
+    background-size: cover;
+    background-image: no-repeat;
+    
+    }
+
+    .tableContainer{
+        color: white;
+        font-family: times 'Times New Roman', Times, serif;
+        background-color: teal;
+    }
+
+    
+
+    
+</style>
+
