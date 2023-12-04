@@ -104,6 +104,11 @@ namespace HarryMidterm.Controllers
             return View("Details");
         }
 
+        public IActionResult ViewBalance()
+        {
+            return View("ViewBalance");
+        }
+
         public IActionResult Capital()
         {
             return View();

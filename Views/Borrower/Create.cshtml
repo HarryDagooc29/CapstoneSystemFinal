@@ -123,14 +123,27 @@
                         <input asp-for="Salary" class="form-control" />
                         <span asp-validation-for="Salary" class="text-danger"></span>
                     </div>
+                    
+                </div>
+
+                 <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Username" class="control-label"></label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
                 </div>
 
                  
-
                 @* Border *@
-
-
-
 
 
                 <div class="form-group ">
@@ -146,11 +159,10 @@
     <div>
 
         <div>
-            <button type="button" onclick="location.href='/Borrower/Index'" class="btn btn-outline-warning back"> Back
-                to
-                List</button>
-            @* <a asp-action="Index" class="back">Back to List</a> *@
-
+            <button type="button" onclick="location.href='/Borrower/Index'" class="btn btn-outline-warning back"> 
+            Back
+            to
+            List</button>
         </div>
 
 

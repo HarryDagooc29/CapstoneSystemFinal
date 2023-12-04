@@ -10,44 +10,53 @@
 
 
 
-
 <script>
   function showAlertBeforeLeaving() {
     Swal.fire({
-        title: 'Are you sure?',
-        text: 'You are about to leave this page. Do you want to continue?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, leave',
-        cancelButtonText: 'No, stay',
+      title: 'Are you sure?',
+      text: 'You are about to leave this page. Do you want to continue?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, leave',
+      cancelButtonText: 'No, stay',
     }).then((result) => {
-        if (result.value) {
-            // Redirect the user to the next page
-            window.location.href = 'next-page.html';
-        }
+      if (result.value) {
+        // Redirect the user to the next page
+        window.location.href = 'next-page.html';
+      }
     });
-}
+  }
 
 </script>
 <style>
   .vh-100 {
     position: relative;
     width: 1517px;
-    
+
   }
 
   body {
+    display: relative;
     padding: 0;
     padding-bottom: 0;
+    margin-bottom: -100px;
   }
-  @* .card{
-    background-color: red;
-  } *@
- 
-</style>
+ .EMPC{
    
+    color: white;
+    font-size: 40px;
+    border-radius: 8px;
+    background: #307d41;
+
+  }
+  @*.card{background-color:red;}*@
+</style>
+
 <section class="vh-100" style="background-color: #409d54;">
   <div class="container py-5 h-100 ">
+    <div class="EMPC">
+      <center> <b>Employee Multi-purpose Cooperative Management System</b></center>
+</div>
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem; ">
@@ -58,101 +67,157 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-          
+
 
                 <form id="signInForm" class="red">
-                
-                  
-
-  <div class="d-flex align-items-center mb-3 pb-1">
-    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-  </div>
-
-  <h5 class="fw-normal mb-3 pb-3 signInLabel" style="letter-spacing: 1px;">Sign into your account</h5>
 
 
-  <div class="form-outline mb-4">
-    <label class="form-label usernameLabel" for="form2Example17">Username</label>
-    <input type="text" id="form2Example17" class="form-control form-control-lg troy" required />
-  </div>
 
-  <div class="form-outline mb-4">
-    <label class="form-label passwordLabel" for="form2Example27">Password</label>
-    <input type="password" id="form2Example27" class="form-control form-control-lg" required />
-  </div>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                  </div>
 
-  <div class="pt-1 mb-4">
-    <button class="btn btn-dark btn-lg btn-block login-btn" type="button">Login</button>
-  </div>
+                  <h5 class="fw-normal mb-3 pb-3 signInLabel" style="letter-spacing: 1px;">Sign into your account</h5>
 
-  
-  <div class="mb-5 pb-lg-2 accountLabel" style="color: #393f81;">
-  Don't have an account? 
-  <a href="#" class="small text-muted" style="color: black;" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-    Register Here
-  </a>
-</div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
-</form>
+                  <div class="form-outline mb-4">
+                    <label class="form-label usernameLabel" for="form2Example17">Username</label>
+                    <input type="text" id="form2Example17" class="form-control form-control-lg troy" required />
+                  </div>
 
-<script>
-  $(()=>{
-    
-    $(".login-btn").click(e=>{
-      e.preventDefault()
-      @* alert("hello") *@
-      console.log("Hello")
-      var username = document.getElementById('form2Example17').value;
-      var password = document.getElementById('form2Example27').value;
-      console.log(username)
-      if (username.trim() === "" || password.trim() === "") {
-        // SweetAlert for validation
-        Swal.fire({
-          icon: 'error',
-          title: 'Validation Error',
-          text: 'Please fill in all required fields!',
-          confirmButtonText: 'OK'
-        });
-      } else {
-        $.ajax({
-          url:"/api/newapi/login",
-          method:"POST",
-          data:{
-            "username":username,
-            "password":password
-          },
-          success:res=>{
-            sessionStorage.setItem("Logged",true)
-            location.href = '/LoginPage/HomePage';
-            console.log(res)
-          },
-          @* sessionStorage.getItem("logged") *@
-          error:err=>{
-            Swal.fire({
-              icon: 'error',
-              title: 'Account not found',
-              text: 'Username or password is invalid!',
-              confirmButtonText: 'OK'
-            });
-          }
+                  <div class="form-outline mb-4">
+                    <label class="form-label passwordLabel" for="form2Example27">Password</label>
+                    <input type="password" id="form2Example27" class="form-control form-control-lg" required />
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block login-btn" type="button">Login</button>
+                  </div>
+
+
+                  <div class="mb-5 pb-lg-2 accountLabel" style="color: #393f81;">
+                    Don't have an account?
+                    <a href="#" class="small text-muted" style="color: black;" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop2">
+                      Register Here
+                    </a>
+                  </div>
+                  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+                </form>
+
+  <script>
+    $(() => {
+
+                    $(".login-btn").click(e => {
+                      e.preventDefault()
+                  @* alert("hello") *@
+                  @* console.log("Hello") *@
+              var username = document.getElementById('form2Example17').value;
+                      var password = document.getElementById('form2Example27').value;
+                      console.log(username)
+                      if (username.trim() === "" || password.trim() === "") {
+                        // SweetAlert for validation
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Validation Error',
+                          text: 'Please fill in all required fields!',
+                          confirmButtonText: 'OK'
+                        });
+                      } else {
+                        $.ajax({
+                          url: "/api/newapi/login",
+                          method: "POST",
+                          data: {
+                            "username": username,
+                            "password": password
+                          },
+                          success: res => {
+                            sessionStorage.setItem("Logged", true)
+                            location.href = '/LoginPage/ViewBalance';
+                            console.log(res)
+                          },
+                  @* sessionStorage.getItem("logged") *@
+                          error: err => {
+                            Swal.fire({
+                              icon: 'error',
+                              title: 'Account not found',
+                              text: 'Username or password is invalid!',
+                              confirmButtonText: 'OK'
+                            });
+                          }
         })
-        // Perform login action
-        // You can redirect to the login page or handle the login logic here
-      }
+                    // Perform login action
+                    // You can redirect to the login page or handle the login logic here
+                  }
     })
 
-    // get the logged status
-    if(sessionStorage.getItem("Logged")==="true"){
-      location.href = '/LoginPage/HomePage'
-    }
+                  // get the logged status
+                  if (sessionStorage.getItem("Logged") === "true") {
+                    location.href = '/LoginPage/ViewBalance'
+                  }
 
     //ayaw na hilabta
   })
 
 
-  
-</script>
+    </script>
+    <script>
+                        //Accounting Staff Login
+
+    $(() => {
+
+                  $(".login-btn").click(e => {
+                      e.preventDefault()
+                  @* alert("hello") *@
+                  @* console.log("Hello") *@
+                  var username = document.getElementById('form2Example17').value;
+                      var password = document.getElementById('form2Example27').value;
+                      console.log(username)
+                      if (username.trim() === "" || password.trim() === "") {
+                        // SweetAlert for validation
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Validation Error',
+                          text: 'Please fill in all required fields!',
+                          confirmButtonText: 'OK'
+                        });
+                      } else {
+                        $.ajax({
+                          url: "/api/newapi/accountingStaff",
+                          method: "POST",
+                          data: {
+                            "username": username,
+                            "password": password
+                          },
+                          success: res => {
+                            sessionStorage.setItem("Logged", true)
+                            location.href = '/LoginPage/HomePage';
+                            console.log(res)
+                          },
+                  @* sessionStorage.getItem("logged") *@
+                          error: err => {
+                            Swal.fire({
+                              icon: 'error',
+                              title: 'Account not found',
+                              text: 'Username or password is invalid!',
+                              confirmButtonText: 'OK'
+                            });
+                          }
+        })
+                    // Perform login action
+                    // You can redirect to the login page or handle the login logic here
+                  }
+    })
+
+                  // get the logged status
+                  if (sessionStorage.getItem("Logged") === "true") {
+                    location.href = '/LoginPage/HomePage'
+                  }
+
+    //ayaw na hilabta
+  })
+        </script>
 
 
               </div>
@@ -167,34 +232,41 @@
 
 
 <style>
-  .harryPic{
-   position: relative;
+  .harryPic {
+    position: relative;
     top: 50px;
     left: 20px;
   }
-  .passwordLabel{
+
+  .passwordLabel {
     font-size: 15px;
   }
-  .usernameLabel{
+
+  .usernameLabel {
     font-size: 15px;
   }
-  .signInLabel{
+
+  .signInLabel {
     font-size: 25px;
- 
+
   }
-  .accountLabel{
+
+  .accountLabel {
     font-size: 15px;
   }
-  .forgotPasswordLabel{
+
+  .forgotPasswordLabel {
     font-size: 15px;
   }
- .button-solid {
+
+  .button-solid {
     border: none;
-}
-button-solid:focus {
+  }
+
+  button-solid:focus {
     border: none;
     outline: none;
-}
+  }
 </style>
 
 

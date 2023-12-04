@@ -32,6 +32,17 @@ namespace sampleMVC.Controllers
             return new BadRequestObjectResult("Account not found");
         }
 
+          [HttpPost]
+        public async Task<IActionResult> accountingStaff(String username, String password){
+            var staff = await _context.Accountingstaffs.FirstOrDefaultAsync(b=>b.Username==username && b.Password==password);
+            if(staff != null){
+                return Ok();
+            }
+            return new BadRequestObjectResult("Account not found");
+        }
+
+
+
         public ActionResult<List<Product>> getAllProducts(){
             
             //return _context.Products.ToList();
@@ -193,6 +204,11 @@ namespace sampleMVC.Controllers
         }
 
      public ActionResult<List<Newborrower>> getfname(){
+              return _context.Newborrowers.ToList();
+     }
+
+
+      public ActionResult<List<Newborrower>> getSalary(){
               return _context.Newborrowers.ToList();
      }
 

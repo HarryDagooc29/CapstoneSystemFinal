@@ -13,20 +13,20 @@
     integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <center>
-    <h3>Are you sure you want to delete this Information?</h3>
+    <h3 class="fontSize">Are you sure you want to delete this Information?</h3>
 </center>
-<form asp-action="Delete">
-    <input type="hidden" asp-for="NewBorrowerId" />
-    @* <input type="submit" value="Delete" class="btn btn-outline-warning" title="Delete" /> *@
-   
+<style>
+    .fontSize{
+        position: relative;
+        margin-top: 20px;
+        font-size: 35px;
+        border-radius: 8px;
+        background-color: #307d41;
 
+    }
+    
+</style>
 
-    <a asp-action="Index" class="btn btn-outline-warning" title="Back"><i class="fa-solid fa-backward"
-            style="color: #4ac4b6;"></i> Back to List</a>
-             <button type="submit" class="btn btn-outline-danger" title="Delete">
-        <i class="fas fa-trash-alt"></i> Delete
-    </button>
-</form>
 <div>
     <dl class="row">
         <dt class="col-sm-2">
@@ -120,24 +120,33 @@
             @Html.DisplayFor(model => model.Salary)
         </dd>
 
-        
-
-        @* <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.PartialPayment)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
         </dt>
         <dd class="col-sm-4">
-        @Html.DisplayFor(model => model.PartialPayment)
+            @Html.DisplayFor(model => model.Username)
         </dd>
 
-        <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Collectible)
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
         </dt>
         <dd class="col-sm-4">
-        @Html.DisplayFor(model => model.Collectible)
-        </dd> *@
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+       
+        <form asp-action="Delete">
+    <input type="hidden" asp-for="NewBorrowerId" />
+    @* <input type="submit" value="Delete" class="btn btn-outline-warning" title="Delete" /> *@
+   
 
 
-        <!-- Add similar code for other fields -->
+    <a asp-action="Index" class="btn btn-outline-warning" title="Back"><i class="fa-solid fa-backward"
+            style="color: #4ac4b6;"></i> Back to List</a>
+             <button type="submit" class="btn btn-outline-danger deleteRight" title="Delete">
+        <i class="fas fa-trash-alt"></i> Delete
+    </button>
+</form>
+
     </dl>
 
 
@@ -145,20 +154,31 @@
 
 <style>
     body {
-        background-image: url("../../building.png");
+        @* background-image: url("../../building.png");
 
         background-color: transparent;
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(25px);
         background-size: cover;
-        background-image: no-repeat;
+        background-image: no-repeat; *@
+
+       background-color: #4aac5f;
 
     }
 
+    .deleteRight{
+        position: relative;
+        right: -1010px;
+    }
+
     .row {
-        color: white;
-        font-size: 20px;
-        font-family: times 'Times New Roman', Times, serif;
+       
+        background-color: white;
+        border-radius: 8px;
+        margin-left: 1px;
+         margin-right: 1px;
+        padding: 20px; /* Add padding for better appearance */
+        margin-bottom: 15px; /* Add margin for better spacing between rows */
     }
 
     h3 {
@@ -166,3 +186,6 @@
         font-family: lucida sans;
     }
 </style>
+
+
+

@@ -16,6 +16,7 @@ namespace HarryMidterm.Entities
         {
         }
 
+        public virtual DbSet<Accountingstaff> Accountingstaffs { get; set; }
         public virtual DbSet<Addloanrecord> Addloanrecords { get; set; }
         public virtual DbSet<Capital> Capitals { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
@@ -41,6 +42,23 @@ namespace HarryMidterm.Entities
         {
             modelBuilder.UseCollation("utf8mb4_general_ci")
                 .HasCharSet("utf8mb4");
+
+            modelBuilder.Entity<Accountingstaff>(entity =>
+            {
+                entity.ToTable("accountingstaff");
+
+                entity.Property(e => e.AccountingStaffId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("AccountingStaffID");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(250);
+
+                entity.Property(e => e.Username)
+                    .IsRequired()
+                    .HasMaxLength(250);
+            });
 
             modelBuilder.Entity<Addloanrecord>(entity =>
             {

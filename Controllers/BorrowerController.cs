@@ -60,7 +60,7 @@ namespace HarryMidterm.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NewBorrowerId,LastName,FirstName,MiddleName,BirthDate,BirthPlace,Sex,City,Province,ZipCode,Nationality,MaritalStatus,Occupation,Salary,CoMaker,LoanType,DaysToPay,PartialPayment,Collectible")] Newborrower newborrower)
+        public async Task<IActionResult> Create([Bind("NewBorrowerId,LastName,FirstName,MiddleName,BirthDate,BirthPlace,Sex,City,Province,ZipCode,Nationality,MaritalStatus,Occupation,Salary,CoMaker,LoanType,DaysToPay,PartialPayment,Collectible,Username,Password")] Newborrower newborrower)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +93,7 @@ namespace HarryMidterm.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //  public async Task<IActionResult> Edit(int id, [Bind("NewBorrowerId,CoMaker")] Newborrower newborrower)
-        public async Task<IActionResult> Edit(int id, [Bind("NewBorrowerId,LastName,FirstName,MiddleName,BirthDate,BirthPlace,Sex,City,Province,ZipCode,Nationality,MaritalStatus,Occupation,Salary,CoMaker,LoanType,DaysToPay,PartialPayment,Collectible")] Newborrower newborrower)
+        public async Task<IActionResult> Edit(int id, [Bind("NewBorrowerId,LastName,FirstName,MiddleName,BirthDate,BirthPlace,Sex,City,Province,ZipCode,Nationality,MaritalStatus,Occupation,Salary,CoMaker,LoanType,DaysToPay,PartialPayment,Collectible,Username,Password")] Newborrower newborrower)
         {
             if (id != newborrower.NewBorrowerId)
             {

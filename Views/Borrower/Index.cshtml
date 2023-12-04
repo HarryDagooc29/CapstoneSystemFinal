@@ -187,20 +187,12 @@
      background-color: #4aac5f;
     
     }
-  
-    @* .tableContainer{
-        
-        color: white;
-        font-family: times 'Times New Roman', Times, serif;
-        background-color: teal;
-        
-    } *@
 
    .tableContainer {
     
-    color: white;
+    color: black;
     font-family: 'Times New Roman', Times, serif;
-    background-color: teal;
+    @* background-color: teal; *@
 }
 
 .tableContainer table {
@@ -208,21 +200,26 @@
     padding-right: 500px;
 }
 
-.tableContainer table th, .tableContainer table td {
+@* .tableContainer table th, .tableContainer table td {
     
     padding: 8px;
     border: 1px solid white;
     text-align: left;
-}
+} *@
+ th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
 
-.tableContainer table th {
-   
-    background-color: darkcyan;
-}
+
 
 .tableContainer table tr:hover {
     
-    background-color: white;
+    
     color: teal; /* You may need to adjust the text color for better visibility */
 }
 

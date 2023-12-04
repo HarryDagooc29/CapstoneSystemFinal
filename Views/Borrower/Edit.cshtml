@@ -21,13 +21,26 @@
 
 
 <center>
-    <h4 style="font-size: 40px; color: white;">Update Borrower Information</h4>
+    <h4 style="font-size: 40px; color: white;" class="fontSize">Update Borrower Information</h4>
 </center>
+<style>
+    .fontSize{
+        position: relative;
+        margin-top: 10px;
+        font-size: 30px;
+        border-radius: 8px;
+        background-color: #307d41;
+    }
+    .moveBot{
+        position: relative;
+        top: 50px;
+    }
+</style>
 <hr />
 
-<div class="row container-fluid ">
+<div class="row container-fluid">
     <div class="col-md-12">
-        <form asp-action="Edit"  >
+        <form asp-action="Edit"  class="moveBot">
             <div asp-validation-summary="ModelOnly" class="text-    danger"></div>
             <input type="hidden" asp-for="NewBorrowerId" />
             <div class="row">
@@ -117,7 +130,19 @@
                     <span asp-validation-for="Salary" class="text-danger"></span>
                 </div>
 
-                
+                <div class="col-sm-6">
+                    <label asp-for="Username" class="control-label" style="color: white;"></label>
+                    <input asp-for="Username" class="form-control"  />
+                    <input asp-for="Username" class="form-control" hidden />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-6">
+                    <label asp-for="Password" class="control-label" style="color: white;"></label>
+                    <input asp-for="Password" class="form-control"  />
+                    <input asp-for="Password" class="form-control" hidden />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
 
 
             </div>
@@ -172,23 +197,18 @@ function showSweetAlert() {
 <style>
     .editMove {
         position: absolute;
-        top: 10px;
-        left: 250px;
+        top: -50px;
+        left: 100px;
     }
 
     .backMove {
         position: absolute;
-        top: 10px;
+        top: 90px;
         left: 140px;
 
     }
 
     body {
-    background-image: url("../../building.png");
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(25px); 
-    background-size: cover;
-    background-image: no-repeat;
+        background-color: #4aac5f;
     }
 </style>

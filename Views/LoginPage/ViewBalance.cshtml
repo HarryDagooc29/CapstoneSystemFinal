@@ -1,0 +1,190 @@
+@model HarryMidterm.Entities.Addloanrecord
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- SweetAlert library -->
+<link rel="stylesheet" href="path/to/sweetalert.css">
+<script src="path/to/sweetalert.min.js"></script>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="fontSize text-center">
+                <b>Welcome John Harry Dagooc!</b>
+            </div>
+        </div>
+    </div>
+    </div>  
+
+<form id="loanForm" method="post">
+
+
+
+
+    <br>
+    
+
+    <div class="row">
+        <div class="">
+            <label class="control-label fName" >Full Name</label>
+        </div>
+    
+        <div class="">
+            <input type="text" class="form-control" title="Full Name" value="John Hary Dagooc" disabled>
+        </div>
+
+           <div class="">
+            <label class="control-label pAmount" >Principal Amount</label>
+        </div>
+        <div class="">
+            <input type="text" class="form-control" title="Principal Amount" value="50,000" disabled>
+        </div>
+
+         <div class="">
+            <label class="control-label acountBalance">Account Balance</label>
+        </div>
+        <div class="">
+            <input type="text" class="form-control"title="Account Balance" value="35,000" disabled>
+        </div>
+          <div class="">
+            <label class="control-label bPaid">Balance Paid</label>
+        </div>
+        <div class="">
+            <input type="text" class="form-control" title="Balance Paid" value="15,000" disabled>
+        </div>
+
+            <div class="">
+            <label class="control-label lDate">Loan Date</label>
+        </div>
+        <div class="">
+            <input type="text" class="form-control"title="Loan Date" value="12/04/23" disabled>
+        </div>
+
+    </div>
+
+
+
+
+</form>
+
+<style>
+    .fName{
+        font-size: 30px;
+        font-family: Arial, sans-serif;
+        color: white;
+        top: 50px;
+    }
+    .acountBalance{
+        font-size: 30px;
+        font-family: Arial, sans-serif;
+        color: white;
+          top: 50px;
+    }
+    .pAmount{
+         font-size: 30px;
+        font-family: Arial, sans-serif;
+        color: white;
+          top: 50px;
+    }
+    .bPaid{
+    font-size: 30px;
+        font-family: Arial, sans-serif;
+        color: white;
+          top: 50px;
+    }
+    .lDate{
+         font-size: 30px;
+        font-family: Arial, sans-serif;
+        color: white;
+          top: 50px;
+    }
+     #loanForm {
+        position: relative;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                max-width: 600px;
+                left: -100px;
+                /* Adjust the maximum width as needed */
+                margin: 0 auto;
+            }
+
+            #loanForm label {
+                position: relative;
+                display: block;
+                left: -250px;
+                margin-bottom: 5px;
+            }
+
+            #loanForm input {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+            #loanForm button {
+                grid-column: span 2;
+                /* Make the button span across both columns */
+            }
+</style>
+
+
+
+        <button class="btn btn-details buttonLogout" onclick="location.href='/LoginPage/Signin'" title="Logout"> <i
+        class="fa-solid fa-right-from-bracket" style="color: #616875;"></i> </button>
+
+
+
+<script>
+    // get the logged status
+    if (sessionStorage.getItem("Logged") === "false" || sessionStorage.getItem("Logged") == undefined || sessionStorage.getItem("Logged") == null) {
+        location.href = '/LoginPage/SignIn'
+    }
+
+</script>
+
+@* <script>
+function logout() {
+swal({
+title: "Are you sure?",
+text: "You will be logged out!",
+icon: "warning",
+buttons: true,
+dangerMode: true,
+})
+.then((willLogout) => {
+if (willLogout) {
+// Redirect to the logout page or perform logout actions
+location.href = '/LoginPage/Signin';
+} else {
+// User clicked the "Cancel" button in the SweetAlert
+swal("Logout canceled!", {
+icon: "info",
+});
+}
+});
+}
+</script> *@
+
+
+<style>
+    body {
+        background-color: #4aac5f;
+    }
+
+    .buttonLogout {
+        position: absolute;
+        font-size: 60px;
+        right: 115px;
+        top: 440px;
+    }
+
+    .fontSize {
+
+        margin-top: 20px;
+        font-size: 30px;
+        border-radius: 8px;
+        background-color: #307d41;
+        color: white;
+    }
+</style>
