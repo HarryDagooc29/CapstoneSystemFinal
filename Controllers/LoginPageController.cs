@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using HarryMidterm.Entities;
 using HarryMidterm;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace HarryMidterm.Controllers
 {
@@ -66,7 +68,7 @@ namespace HarryMidterm.Controllers
         }
         public IActionResult LoanRecords()
         {
-            return View("LoanRecords");
+            return View();
         }
         public IActionResult Signout()
         {
@@ -82,10 +84,10 @@ namespace HarryMidterm.Controllers
         {
             return View("SalesReports");
         }
-        public IActionResult LoanReports()
-        {
-            return View("LoanReports");
-        }
+        // public IActionResult LoanReports()
+        // {
+        //     return View("LoanReports");
+        // }
 
         public IActionResult TransactionReports()
         {
@@ -99,6 +101,8 @@ namespace HarryMidterm.Controllers
         {
             return View("BorrowerRecords");
         }
+
+        
         public IActionResult Details()
         {
             return View("Details");
@@ -149,7 +153,29 @@ namespace HarryMidterm.Controllers
 
             return RedirectToAction("Capital");
         }
+        //Loan Reports Display
+        public async Task<IActionResult> LoanReports()
+        {
+            return View(await _context.Addloanrecords.ToListAsync());
+        }
 
+        // GET: Borrower/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var loanRecord = await _context.Addloanrecords
+                .FirstOrDefaultAsync(m => m.AddloanrecordId == id);
+            if (loanRecord == null)
+            {
+                return NotFound();
+            }
+
+            return View(loanRecord);
+        }
 
            
 

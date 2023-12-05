@@ -328,6 +328,15 @@ namespace sampleMVC.Controllers
         }
 
 
+          public IActionResult addloan(Addloanrecord addloan)
+        {
+           
+            _context.Addloanrecords.Add(addloan);
+            _context.SaveChanges();
+            return Ok();
+        }
+
+
 
 
 

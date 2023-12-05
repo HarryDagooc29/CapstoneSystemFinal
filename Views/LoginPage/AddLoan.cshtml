@@ -227,22 +227,26 @@
 
             <div>
                 <label for="date">Date Allocated</label>
-                <input type="date" id="date" placeholder="Date Allocation" required asp-for="DateAllocated">
+                <input type="date" id="date" placeholder="Date Allocation" name="DateAllocated" required asp-for="DateAllocated">
             </div>
             <div>
                 <label for="paymentStart">Payment Start Date</label>
-                <input type="date" id="paymentStart" placeholder="Payment Start Date" required
+                <input type="date" id="paymentStart" name="PaymentStartDate" placeholder="Payment Start Date" required
                     asp-for="PaymentStartDate">
             </div>
             <div>
-                <label class="control-label">Full Name</label>
-                <select asp-for="LastName" id="lname" class="form-select"></select>
+                <label class="control-label">Last Name</label>
+                <select asp-for="LastName" id="lname" name="LastName" class="form-select"></select>
+            </div>
+             <div>
+                <label class="control-label">First Name</label>
+                <select asp-for="FirstName" id="fname" name="FirstName" class="form-select"></select>
             </div>
 
 
             <div>
                 <label class="control-label">Salary</label>
-                <select id="salary" class="form-select"></select>
+                <select id="salary" class="form-select" name="Salary" ></select>
             </div>
 
 
@@ -250,24 +254,24 @@
             <div>
                 <label for="principal">Principal amount:</label>
                 <input type="number" id="principal" step="0.01" placeholder="Enter principal amount" required
-                    asp-for="PrincipalAmount" oninput="calculateRepayment()" min="3000">
+                    asp-for="PrincipalAmount" name="PrincipalAmount" oninput="calculateRepayment()" min="3000">
             </div>
 
             <div>
                 <label for="interestRate">Annual interest rate:</label>
                 <input type="number" id="interestRate" step="0.01" placeholder="Enter annual interest rate" required
-                    asp-for="AnnualInterestRate" oninput="calculateRepayment()">
+                    asp-for="AnnualInterestRate" name="AnnualInterestRate" oninput="calculateRepayment()">
             </div>
 
             <div>
                 <label for="loanTerm">Loan term in months:</label>
-                <input type="number" id="loanTerm" placeholder="Enter loan term in months" required
-                    asp-for="LoanTermMonths" oninput="calculateRepayment()">
+                <input name="LoanTermMonths" type="number" id="loanTerm" placeholder="Enter loan term in months" required
+                    asp-for="LoanTermMonths"  oninput="calculateRepayment()">
             </div>
             <div>
                 <label for="loanTermDays">Loan term in days:</label>
                 <input type="number" id="loanTermDays" placeholder="Enter loan term in days" required
-                    asp-for="LoanTermDays" oninput="calculateDaysRepayment()">
+                    asp-for="LoanTermDays" name="LoanTermDays" oninput="calculateDaysRepayment()">
             </div>
 
             @* <p id="result" name="PaymentMonthsDays"></p> *@
@@ -306,87 +310,62 @@
 
 
                 $(document).ready(function () {
-                    fname();
-                  
+    fname();
 
+    function fname() {
+        $.ajax("../api/newapi/getfname")
+            .done(function (result) {
+                var template = document.querySelector("template#fnameOptionTemplate");
+                var parent = document.querySelectorAll("#lname");
 
-                    function fname() {
+                for (i = 0; i < parent.length; i++) {
+                    result.forEach(function (item) {
+                        var cloned = template.content.cloneNode(true);
+                        cloned.querySelector("option").value = item.lastName; // Use lastName for value
+                        cloned.querySelector("option").innerText = item.lastName;
 
-                        $.ajax("../api/newapi/getfname")
-                            .done(function (result) {
-
-                                var template = document.querySelector("template#fnameOptionTemplate");
-                                var parent = document.querySelectorAll("#lname");
-
-
-                                for (i = 0; i < parent.length; i++) {
-                                    result.forEach(function (item) {
-                                        var cloned = template.content.cloneNode(true);
-                                        cloned.querySelector("option").value = item.newBorrowerId;
-                                        cloned.querySelector("option").innerText = item.lastName+', '+item.firstName;
-                                        
-
-                                        parent[i].prepend(cloned);
-                                    });
-                                }
-
-                            });
-                    }
-                    //Get Salary
-
-                   
-
-
-                    const depSelect = document.querySelector("#lname");
-                  
-                    const salarySelect = document.querySelector("#salary");
-
-
-                    // Function to populate the result select with data
-                    function populateResultSelect(selectedValue) {
-
-
-                        $.ajax("../api/newapi/getfname")
-                            .done(function (data) {
-
-
-                                // Filter the data based on the selected category
-                                const datos = data.filter(item => item.newBorrowerId == selectedValue);
-
-                                // Clear the existing options in the result select
-                              
-                                 salarySelect.innerHTML = "";
-
-
-                              
-
-                                 // Populate the result select with the filtered data
-                                datos.forEach((item) => {
-                                    const option = document.createElement("option");
-                                    option.value = item.newBorrowerId;
-                                    option.innerText = item.salary;
-
-                                    salarySelect.appendChild(option);
-
-
-                                });
-
-
-                            });
-                    }
-
-                    // Initial population of the result select based on the default selected value
-                    populateResultSelect(depSelect.value);
-
-                    // Event listener to update the result select when the category select changes
-                    depSelect.addEventListener("change", function () {
-                        const selectedValue = this.value;
-                        populateResultSelect(selectedValue);
+                        parent[i].prepend(cloned);
                     });
+                }
+            });
+    }
 
+    const depSelect = document.querySelector("#lname");
+    const fSelect = document.querySelector("#fname");
+    const salarySelect = document.querySelector("#salary");
 
+    function populateResultSelect(selectedValue) {
+        $.ajax("../api/newapi/getfname")
+            .done(function (data) {
+                const datos = data.filter(item => item.lastName == selectedValue);
 
-                });////   dont touch it sugar mom
+                fSelect.innerHTML = "";
+                salarySelect.innerHTML = "";
+
+                datos.forEach((item) => {
+                    const option = document.createElement("option");
+                    option.value = item.lastName;
+                    option.innerText = item.salary;
+                    salarySelect.appendChild(option);
+                });
+
+                datos.forEach((item) => {
+                    const option = document.createElement("option");
+                    option.value = item.firstName; // Use firstName for value
+                    option.innerText = item.firstName;
+                    fSelect.appendChild(option);
+                });
+            });
+    }
+
+    populateResultSelect(depSelect.value);
+
+    depSelect.addEventListener("change", function () {
+        const selectedValue = this.value;
+        populateResultSelect(selectedValue);
+    });
+});
+////   dont touch it sugar mom
 
 
 
@@ -414,8 +393,17 @@
 
 
         <script>
-            function saveData() {
 
+            var FTotalInterest;
+            var FTotalAmount;
+             var FmonthlyPayment;
+
+
+
+            function saveData() {
+             
+
+                 var arrData = {};
 
                 //ayaw ni tan dug kani dre nga line
                 var formelements = $("#loanForm");
@@ -423,15 +411,58 @@
                 //getting the data from the form
                 var formInputs = $("#loanForm").serializeArray();
 
+
+                console.log(formInputs)
+
+
+                   formInputs.forEach(function (item) {
+                arrData[item.name] = item.value;
+            });
+
+
+
+             arrData.PaymentMonthsDays =  FmonthlyPayment;
+             arrData.TotalInterest  =  FTotalInterest;
+             arrData.TotalAmount =  FTotalAmount;
+
+            
+
+            console.log(arrData)
+ 
+             
                 if (formInputs[0].value !== '' && formInputs[1].value !== '' && formInputs[2].value !== '' && formInputs[3].value !== '' && formInputs[1].value !== '' && formInputs[1].value !== '' && formInputs[4].value !== '' && formInputs[5].value !== '' && formInputs[6].value !== '') {
 
+
+                 $.ajax
+                        ({
+                            url: "../api/newapi/addloan",
+                            type: "POST",
+                            data:
+                            {
+                                addloan: arrData
+                            },
+                        })
+                        .done(function () {
+
+                            $("#loanForm")[0].reset();
+                                 
+
+                        });
+
+
+                    
                     Swal.fire({
+
+
                         icon: 'success',
                         title: 'Data Saved!',
                         text: 'Your data has been successfully saved.',
                         confirmButtonColor: '#4ac4b6', // Match the color to your design
 
                     });
+
+                     window.location.href = 'https://localhost:7132/LoginPage/AddLoan';
+
 
 
 
@@ -461,11 +492,15 @@
                 const totalAmount = principal + totalInterest;
 
 
+               
+
 
                 const resultText = `Monthly Payment: ₱${monthlyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}`;
                 document.getElementById('result').innerHTML = resultText;
-
-
+          
+                  FTotalInterest = totalInterest.toFixed(2);
+                FTotalAmount = totalAmount.toFixed(2);
+                 FmonthlyPayment = monthlyPayment.toFixed(2);
 
 
             }
@@ -492,6 +527,11 @@
 
                 const resultText = `Daily Payment: ₱${dailyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}`;
                 document.getElementById('result').innerHTML = resultText;
+
+
+                  FTotalInterest = totalInterest.toFixed(2);
+                FTotalAmount = totalAmount.toFixed(2);
+                 FmonthlyPayment = dailyPayment.toFixed(2);
             }
 
             function calculateDailyRepayment(P, r, n) {
