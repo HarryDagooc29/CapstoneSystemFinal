@@ -1,0 +1,379 @@
+@model IEnumerable<HarryMidterm.Entities.Addloanrecord>
+
+
+
+@{
+    ViewData["Title"] = "LoanReports";
+}
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+<html>
+    <script>
+    // get the logged status
+    if (sessionStorage.getItem("Logged") === "false" || sessionStorage.getItem("Logged") == undefined || sessionStorage.getItem("Logged") == null) {
+        location.href = '/LoginPage/LoanReports'
+    }
+
+</script>
+    <script>
+      
+    $(document).ready(function () {
+        $('.tableContainer').DataTable({
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "searching": true
+        });
+    });
+</script>
+
+</html>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+  integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+@* @Html.Partial("Partial/UpdateModal") *@
+<center>
+<h1 style="color: white;" class="colorMe">Loan Records</h1>
+
+</center>
+
+
+<p>
+    @* <a asp-action="Create">Create New</a> *@
+    
+    <button type="button" onclick="location.href='/LoginPage/HomePage'" class="btn btn-outline-warning buttonLoanRecord" title="Loan Records"> <i class="fa-solid fa-home" style="color: #4ac4b6;"></i> Home </button>
+     @* <button type="button" onclick="location.href='/Borrower/Create'" class="btn btn-outline-warning loanMove" title="Add Employee-Borrower"> <i class="fa-solid fa-plus" style="color: #4ac4b6"></i>Add Employee</button> *@
+     <style>
+       
+        .colorMe{
+            top: 10px;
+            position: relative;
+            background-color: #307d41;
+            width: 1400px;
+            border-radius: 7px;
+            color: white;
+       
+        }
+        .loanMove{
+            position: absolute;
+            top: 70px;
+            left: 1365px;
+            height: 50px;
+        }
+        .buttonLoanRecord{
+             position: absolute;
+                top: 70px;
+            font-size: 25px;
+        }
+       
+        
+
+        
+     </style>
+</p>
+
+
+<div class="tumoy">
+    <!-- Dropdown -->
+
+<label for="startDate">From Date:</label>
+<input type="date" id="startDate" />
+<label for="endDate">To Date:</label>
+<input type="date" id="endDate" />
+<button id="clearButton" class="btn" style="background-color: #1d4533; color: white;">Clear</button>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Add an event listener to the date inputs
+        $("#startDate, #endDate").change(function () {
+            filterTable();
+        });
+
+        // Add an event listener to the Clear button
+        $("#clearButton").click(function () {
+            // Reset input fields
+            $("#startDate, #endDate").val('');
+            
+            // Show all rows
+            $(".payment-row").show();
+        });
+
+
+    });
+
+    function filterTable() {
+        // Get the selected start and end dates
+        var startDate = new Date($("#startDate").val());
+        var endDate = new Date($("#endDate").val());
+
+        // Loop through each payment row
+        $(".payment-row").each(function () {
+            // Get the payment start date from the current row
+            var paymentStartDate = new Date($(this).find("td:eq(0)").text().trim());
+
+            // Check if the payment start date is within the selected date range
+            if (isDateInRange(paymentStartDate, startDate, endDate)) {
+                // Show the row if it's within the range
+                $(this).show();
+            } else {
+                // Hide the row if it's outside the range
+                $(this).hide();
+            }
+        });
+    }
+
+    function isDateInRange(dateToCheck, startDate, endDate) {
+        // Check if the date is within the range
+        return dateToCheck >= startDate && dateToCheck <= endDate;
+    }
+
+
+
+</script>
+
+
+
+@* <label for="dropdown">Select an option:</label>
+
+<select id="dropdown"></select> *@
+
+
+
+<table class="tableContainer" style="border-radius: 10px; " id="example">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrincipalAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanTermMonths)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanTermDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentMonthsDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalInterest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="payment-row">
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentStartDate)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrincipalAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanTermMonths)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanTermDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentMonthsDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalInterest)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+                
+                <td>
+                    @* <a asp-action="Edit" asp-route-id="@item.AddloanrecordId" class="btn btn-outline-warning" title="Update"><i class="fa-solid fa-pen-to-square" style="color: #4ac4b6;"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.AddloanrecordId" class="btn btn-outline-warning" title="Details"><i class="fa-solid fa-circle-info" style="color: #4ac4b6;"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.AddloanrecordId" class="btn btn-outline-danger" title="Delete"><i class="fa-solid fa-trash" style="color: #4ac4b6;"></i></a> *@
+                @* <button onclick="printReceipt()" title="Print" class="btn btn-success"><i class="fa-solid fa-print" style="color: #1d4533;"></i></button> *@
+                <button type="button" onclick="location.href='@Url.Action("LoanReportsDetails", new { id = item.AddloanrecordId })'" class="btn btn-success" title="Details">
+                 <i class="fa-solid fa-circle-info" style="color: #1d4533;"></i>
+                </button>
+
+    
+
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>
+<script>
+$(document).ready(function() {
+  // Initialize DataTable
+  var dataTable = $('#example').DataTable();
+
+  // Populate dropdown with unique values from the first column
+  var dropdown = $('#dropdown');
+  dataTable.rows().every(function(index, element) {
+    var rowData = this.data();
+    var optionText = rowData[0]; // Assuming the first column contains the desired dropdown values
+    dropdown.append($('<option>').text(optionText));
+  });
+
+  // Add event listener to the dropdown for filtering DataTable
+  dropdown.on('change', function() {
+    var selectedValue = $(this).val();
+    dataTable.search(selectedValue).draw();
+  });
+});
+</script>   
+
+ <div id="receipt">
+       
+    </div>
+  
+
+    
+
+      <script> 
+        function applyDateFilter(event) {
+            event.preventDefault();
+
+            // Get values from date input fields
+            var fromDate = document.getElementById('fromDate').value;
+            var toDate = document.getElementById('toDate').value;
+
+            // You can use fromDate and toDate to filter receipts or perform other actions
+            // For this example, we'll just display a message in the receipt div
+            var receiptDiv = document.getElementById('receipt');
+            receiptDiv.innerHTML = `<p class="hi">Filter applied from ${fromDate} to ${toDate}</p>`;
+
+            // Show the receipt div
+            receiptDiv.style.display = 'block';
+        }
+
+       
+    </script>
+ 
+
+<style>
+     body{
+
+
+     background-color: #4aac5f;
+    
+    }
+
+   .tableContainer {
+    
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    @* background-color: teal; *@
+}
+
+.tableContainer table {
+    border-collapse: collapse;
+    padding-right: 500px;
+}
+
+@* .tableContainer table th, .tableContainer table td {
+    
+    padding: 8px;
+    border: 1px solid white;
+    text-align: left;
+} *@
+ th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+
+
+.tableContainer table tr:hover {
+    
+    
+    color: teal; /* You may need to adjust the text color for better visibility */
+}
+
+
+
+    
+    .tumoy{
+            
+        padding-top: 80px;
+        
+        
+    }
+    
+   
+</style>
+
+@* <div class="receipt">
+ 
+    <div class="button-container">
+        <button onclick="openPrintWindow()">Print Receipt</button>
+        <button onclick="generatePDF()">Download PDF</button>
+    </div>
+</div> *@
+
+<script>
+   /* function openPrintWindow() {
+        // Open a new window for printing
+        @* window.open('', '_blank'); *@
+        window.print();
+    }
+
+    function generatePDF() {
+        // You can use a library like jsPDF to generate a PDF
+        // For simplicity, let's just alert that PDF generation is not implemented in this example
+        alert('PDF generation functionality not implemented in this example');
+    }*/
+</script>
+
+
+
+

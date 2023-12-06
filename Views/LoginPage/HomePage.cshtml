@@ -518,14 +518,14 @@ function merchandiseAlert() {
 <script>
 function reportsAlert() {
   Swal.fire({
-    title: 'Welcome to Reports',
+    title: 'Welcome to Loan Record',
     text: 'You have entered the Reports page!',
     icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
     confirmButtonText: 'OK'
   }).then((result) => {
     if (result.isConfirmed) {
       // Redirect the user to the new page
-      window.location.href = '/LoginPage/AllReports';
+      window.location.href = '/LoginPage/LoanRecords';
     }
   }
   );
@@ -534,7 +534,7 @@ function reportsAlert() {
   
 
   
-      <button type="button" onclick="reportsAlert()" class="buttonAllReports">Reports</button>
+      <button type="button" onclick="reportsAlert()" class="buttonAllReports">Loan Record</button>
       <div class="reportsIcon type="button" onclick="reportsAlert()"">
     📈
       </div>

@@ -66,10 +66,10 @@ namespace HarryMidterm.Controllers
         {
             return View("Merchandise");
         }
-        public IActionResult LoanRecords()
-        {
-            return View();
-        }
+        // public IActionResult LoanRecords()
+        // {
+        //     return View();
+        // }
         public IActionResult Signout()
         {
             return View("Signout");
@@ -117,6 +117,10 @@ namespace HarryMidterm.Controllers
         {
             return View();
         }
+        public IActionResult Receipt()
+        {
+            return View();
+        }
 
 
         public IActionResult AddLoan()
@@ -161,6 +165,52 @@ namespace HarryMidterm.Controllers
 
         // GET: Borrower/Details/5
         public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var loanRecord = await _context.Addloanrecords
+                .FirstOrDefaultAsync(m => m.AddloanrecordId == id);
+            if (loanRecord == null)
+            {
+                return NotFound();
+            }
+
+            return View(loanRecord);
+        }
+
+
+        public async Task<IActionResult> LoanRecords()
+        {
+            return View(await _context.Addloanrecords.ToListAsync());
+        }
+
+        // GET: Borrower/Details/5
+        public async Task<IActionResult> LoanRecordDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var loanRecord = await _context.Addloanrecords
+                .FirstOrDefaultAsync(m => m.AddloanrecordId == id);
+            if (loanRecord == null)
+            {
+                return NotFound();
+            }
+
+            return View(loanRecord);
+        }
+
+        // public async Task<IActionResult> LoanReportsDetails()
+        // {
+        //     return View(await _context.Addloanrecords.ToListAsync());
+        // }
+
+        public async Task<IActionResult> LoanReportsDetails(int? id)
         {
             if (id == null)
             {

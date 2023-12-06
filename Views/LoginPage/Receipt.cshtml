@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .receipt {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="receipt">
+    <h2>Receipt</h2>
+    <p>Customer: John Doe</p>
+    <p>Item: Product XYZ</p>
+    <p>Amount: $50.00</p>
+    <p>Date: December 6, 2023</p>
+    <div class="button-container">
+        <button onclick="openPrintWindow()">Print Receipt</button>
+        <button onclick="generatePDF()">Download PDF</button>
+    </div>
+</div>
+
+<script>
+    function openPrintWindow() {
+        // Open a new window for printing
+        window.open('', '_blank');
+        window.print();
+    }
+
+    function generatePDF() {
+        // You can use a library like jsPDF to generate a PDF
+        // For simplicity, let's just alert that PDF generation is not implemented in this example
+        alert('PDF generation functionality not implemented in this example');
+    }
+</script>
+
+</body>
+</html>

@@ -246,7 +246,7 @@
 
             <div>
                 <label class="control-label">Salary</label>
-                <select id="salary" class="form-select" name="Salary" ></select>
+                <select id="salary" class="form-select" name="Salary"></select>
             </div>
 
 
@@ -398,8 +398,6 @@
             var FTotalAmount;
              var FmonthlyPayment;
 
-
-
             function saveData() {
              
 
@@ -484,16 +482,16 @@
                 const interestRate = parseFloat(document.getElementById('interestRate').value);
                 const loanTerm = parseFloat(document.getElementById('loanTerm').value);
                 const loanTermDays = parseFloat(document.getElementById('loanTerm').value);
-
+               
 
                 const monthlyPayment = calculateMonthlyRepayment(principal, interestRate, loanTerm);
                 const totalPayment = monthlyPayment * loanTerm;
                 const totalInterest = totalPayment - principal;
                 const totalAmount = principal + totalInterest;
+                
 
-
-               
-
+            
+        
 
                 const resultText = `Monthly Payment: ₱${monthlyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}`;
                 document.getElementById('result').innerHTML = resultText;
@@ -501,9 +499,14 @@
                   FTotalInterest = totalInterest.toFixed(2);
                 FTotalAmount = totalAmount.toFixed(2);
                  FmonthlyPayment = monthlyPayment.toFixed(2);
+                
+               
+                
 
 
             }
+
+        
 
             function calculateMonthlyRepayment(P, r, n) {
                 const monthlyInterest = r / 12; // Assuming the interest is an annual rate
@@ -511,6 +514,9 @@
                 const repayment = (P * monthlyInterest * power) / (power - 1);
                 return repayment;
             }
+
+            
+    
 
 
 

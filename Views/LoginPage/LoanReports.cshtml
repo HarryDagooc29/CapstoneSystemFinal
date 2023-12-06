@@ -164,8 +164,8 @@
                     @* <a asp-action="Edit" asp-route-id="@item.AddloanrecordId" class="btn btn-outline-warning" title="Update"><i class="fa-solid fa-pen-to-square" style="color: #4ac4b6;"></i></a>
                     <a asp-action="Details" asp-route-id="@item.AddloanrecordId" class="btn btn-outline-warning" title="Details"><i class="fa-solid fa-circle-info" style="color: #4ac4b6;"></i></a>
                     <a asp-action="Delete" asp-route-id="@item.AddloanrecordId" class="btn btn-outline-danger" title="Delete"><i class="fa-solid fa-trash" style="color: #4ac4b6;"></i></a> *@
-                <button onclick="printReceipt()" title="Print" class="btn btn-success"><i class="fa-solid fa-print" style="color: #1d4533;"></i></button>
-
+                <a asp-action="LoanReportsDetails" asp-route-id="@item.AddloanrecordId" class="btn btn-succes" title="Details"><i class="fa-solid fa-circle-info" style="color: #1d4533;"></i></a>
+             
                 </td>
             </tr>
         }
@@ -279,3 +279,25 @@ $(document).ready(function() {
     
 </style>
 
+
+<div class="receipt">
+ 
+    <div class="button-container">
+        <button onclick="openPrintWindow()">Print Receipt</button>
+        <button onclick="generatePDF()">Download PDF</button>
+    </div>
+</div>
+
+<script>
+    function openPrintWindow() {
+        // Open a new window for printing
+        @* window.open('', '_blank'); *@
+        window.print();
+    }
+
+    function generatePDF() {
+        // You can use a library like jsPDF to generate a PDF
+        // For simplicity, let's just alert that PDF generation is not implemented in this example
+        alert('PDF generation functionality not implemented in this example');
+    }
+</script>
