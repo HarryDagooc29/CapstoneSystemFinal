@@ -1,5 +1,7 @@
 @model HarryMidterm.Entities.Addloanrecord
 
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
     integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -10,13 +12,15 @@
     <div class="row">
         <div class="col-md-12">
             <div class="fontSize text-center">
-                <b>Welcome John Harry Dagooc!</b>
-            </div>
+        <b>Welcome John Harry Dagooc!</b>
+    </div>
         </div>
     </div>
     </div>  
 
-<form id="loanForm" method="post">
+    
+
+@* <form id="loanForm" method="post">
 
 
 
@@ -65,7 +69,39 @@
 
 
 
-</form>
+</form> *@
+
+
+<div class="topMostLayer">
+
+
+    <div class="colorMe">
+        <center>
+            <h2>Borrower Balance</h2>
+        </center>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">Last Name</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.LastName)</dd>
+
+
+            <dt class="col-sm-3">First Name</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.FirstName)</dd>
+
+            <dt class="col-sm-3">Middle Name</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.PaymentStartDate)</dd>
+
+            <dt class="col-sm-3">Birth Date</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.PrincipalAmount)</dd>
+
+            <dt class="col-sm-3">Birth Place</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.TotalAmount)</dd>
+
+            
+
+        </dl>
+    </div>
+
 
 <style>
     .fName{
@@ -130,15 +166,24 @@
 
 
 
-        <button class="btn btn-details buttonLogout" onclick="location.href='/LoginPage/Signin'" title="Logout"> <i
+        <button class="btn btn-details buttonLogout" onclick="clickMe()" title="Logout"> <i
         class="fa-solid fa-right-from-bracket" style="color: #616875;"></i> </button>
 
 
 
 <script>
     // get the logged status
-    if (sessionStorage.getItem("Logged") === "false" || sessionStorage.getItem("Logged") == undefined || sessionStorage.getItem("Logged") == null) {
+    sessionStorage.setItem("Borrower",true)
+    function clickMe(){
+        sessionStorage.setItem("Logged",false)
+        sessionStorage.setItem("Borrower",false)
+        location.href='/LoginPage/Signin'
+
+    }
+
+    if (sessionStorage.getItem("Logged") === "false" || sessionStorage.getItem("Logged") == undefined || sessionStorage.getItem("Logged") == null  || sessionStorage.getItem("Borrower") == "false" || sessionStorage.getItem("Borrower") == undefined || sessionStorage.getItem("Borrower") == null) {
         location.href = '/LoginPage/SignIn'
+
     }
 
 </script>

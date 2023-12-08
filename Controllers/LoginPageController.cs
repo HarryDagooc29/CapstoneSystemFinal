@@ -9,6 +9,7 @@ using HarryMidterm.Entities;
 using HarryMidterm;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using HarryMidterm.ViewModel;
 
 
 namespace HarryMidterm.Controllers
@@ -108,10 +109,10 @@ namespace HarryMidterm.Controllers
             return View("Details");
         }
 
-        public IActionResult ViewBalance()
-        {
-            return View("ViewBalance");
-        }
+        // public IActionResult ViewBalance()
+        // {
+        //     return View("ViewBalance");
+        // }
 
         public IActionResult Capital()
         {
@@ -187,11 +188,12 @@ namespace HarryMidterm.Controllers
             return View(await _context.Addloanrecords.ToListAsync());
         }
 
+      
         // GET: Borrower/Details/5
-        public async Task<IActionResult> LoanRecordDetails(int? id)
+        public async Task<IActionResult> LoanRecordsDetails(int? id)
         {
             if (id == null)
-            {
+            {   
                 return NotFound();
             }
 
@@ -204,11 +206,6 @@ namespace HarryMidterm.Controllers
 
             return View(loanRecord);
         }
-
-        // public async Task<IActionResult> LoanReportsDetails()
-        // {
-        //     return View(await _context.Addloanrecords.ToListAsync());
-        // }
 
         public async Task<IActionResult> LoanReportsDetails(int? id)
         {
@@ -226,6 +223,51 @@ namespace HarryMidterm.Controllers
 
             return View(loanRecord);
         }
+
+       
+
+         public async Task<IActionResult> ViewBalance(int? id)
+        {
+            return View();
+
+        }
+
+        
+
+          public async Task<IActionResult> PayLoan()
+        {
+
+              var res = 
+            (
+                from c in _context.Addloanrecords
+                join p in _context.Schedules
+                on c.AddloanrecordId equals p.ScheduleId
+
+                select new PPayment
+                {
+                    
+                    ScheduleID = c.AddloanrecordId,
+                    LoanTermDays = c.LoanTermDays,
+                    LoanTermMonths = c.LoanTermMonths,
+                    PrincipalAmount = c.PrincipalAmount,
+                    AnnualInterestRate = c.AnnualInterestRate,
+                    addloanrecordID = p.ScheduleId,
+                    Date = p.Date,
+                    Payment = p.Payment,
+                    Balance = p.Balance,
+                    Type = p.Type
+                }
+            ).ToList();
+
+           return View(res.FirstOrDefault());
+          
+        }
+
+        
+
+        
+
+       
 
            
 

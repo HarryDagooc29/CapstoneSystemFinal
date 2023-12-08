@@ -19,7 +19,7 @@ namespace HarryMidterm.Entities
         public string MaritalStatus { get; set; }
         public string Occupation { get; set; }
         public int Salary { get; set; }
-        public string? Username { get; set; }
-        public string? Password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

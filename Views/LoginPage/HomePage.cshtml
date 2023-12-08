@@ -20,7 +20,7 @@
 </head>
 <script>
   // get the logged status
-  if(sessionStorage.getItem("Logged")==="false" || sessionStorage.getItem("Logged")==undefined || sessionStorage.getItem("Logged")==null){
+  if( sessionStorage.getItem("Borrower") == "false" ||sessionStorage.getItem("Logged")==="false" || sessionStorage.getItem("Logged")==undefined || sessionStorage.getItem("Logged")==null){
     location.href = '/LoginPage/SignIn'
   }
 </script>
@@ -396,7 +396,7 @@ function addLoanRecordsAlert() {
 
         }
 
-        .buttonAllReports {
+        .buttonPayment {
           position: absolute;
           text-decoration: none;
           top: 533px;
@@ -419,7 +419,7 @@ function addLoanRecordsAlert() {
           border-radius: 1rem;
         }
 
-        .buttonAllReports:hover {
+        .buttonPayment:hover {
           background-color: white;
           color: black;
 
@@ -518,14 +518,14 @@ function merchandiseAlert() {
 <script>
 function reportsAlert() {
   Swal.fire({
-    title: 'Welcome to Loan Record',
-    text: 'You have entered the Reports page!',
+    title: 'Welcome to Loan Payment',
+    text: 'You have entered the Loan Payment page!',
     icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
     confirmButtonText: 'OK'
   }).then((result) => {
     if (result.isConfirmed) {
       // Redirect the user to the new page
-      window.location.href = '/LoginPage/LoanRecords';
+      window.location.href = '/LoginPage/PayLoan';
     }
   }
   );
@@ -534,9 +534,9 @@ function reportsAlert() {
   
 
   
-      <button type="button" onclick="reportsAlert()" class="buttonAllReports">Loan Record</button>
-      <div class="reportsIcon type="button" onclick="reportsAlert()"">
-    📈
+      <button type="button" onclick="reportsAlert()" class="buttonPayment">Payment</button>
+      <div class="reportsIcon type="button" onclick="reportsAlert()">
+    💳
       </div>
      
 

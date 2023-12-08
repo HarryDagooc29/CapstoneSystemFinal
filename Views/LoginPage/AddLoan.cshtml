@@ -161,29 +161,6 @@
 
         <br>
 
-        @* <form id="loanForm">
-
-        <label for="date">Date Allocated</label>
-        <input type="date" id="date" placeholder="Date Allocation">
-        <label for="principal">Principal amount:</label>
-        <input type="number" id="principal" step="0.01" placeholder="Enter principal amount" required
-        oninput="calculateRepayment()">
-
-        <label for="interestRate">Annual interest rate:</label>
-        <input type="number" id="interestRate" step="0.01" placeholder="Enter annual interest rate" required
-        oninput="calculateRepayment()">
-
-        <label for="loanTerm">Loan term in months:</label>
-        <input type="number" id="loanTerm" placeholder="Enter loan term in months" required
-        oninput="calculateRepayment()">
-
-        <label for="paymentStart">Payment Start Date</label>
-        <input type="date" id="paymentStart" placeholder="Payment Start Date">
-
-        <button type="submit" class="btn btn-outline-warning buttonSave" title="Home"> <i class="fa-solid fa-save"
-        style="color: #4ac4b6;"></i> Save </button>
-
-        </form> *@
         <style>
             #loanForm {
                 display: grid;
@@ -397,6 +374,8 @@
             var FTotalInterest;
             var FTotalAmount;
              var FmonthlyPayment;
+             var Fsal;
+
 
             function saveData() {
              
@@ -418,10 +397,13 @@
             });
 
 
-
+            //from DataBase
              arrData.PaymentMonthsDays =  FmonthlyPayment;
              arrData.TotalInterest  =  FTotalInterest;
              arrData.TotalAmount =  FTotalAmount;
+             arrData.SalaryLeft =  Fsal;
+
+
 
             
 
@@ -482,28 +464,32 @@
                 const interestRate = parseFloat(document.getElementById('interestRate').value);
                 const loanTerm = parseFloat(document.getElementById('loanTerm').value);
                 const loanTermDays = parseFloat(document.getElementById('loanTerm').value);
+                @* const sal = parseFloat(document.getElementById('salary').value); *@
+                const sal = parseFloat(document.getElementById('salary').options[document.getElementById('salary').selectedIndex].text);
+
                
 
-                const monthlyPayment = calculateMonthlyRepayment(principal, interestRate, loanTerm);
+                const monthlyPayment = calculateMonthlyRepayment(principal, interestRate, loanTerm,sal);
                 const totalPayment = monthlyPayment * loanTerm;
                 const totalInterest = totalPayment - principal;
                 const totalAmount = principal + totalInterest;
-                
+                @* const balance = principal - sal - totalInterest; *@
+                const salLeft = sal - monthlyPayment;
 
-            
-        
 
-                const resultText = `Monthly Payment: ₱${monthlyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}`;
+              
+
+
+                const resultText = `Monthly Payment: ₱${monthlyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}<br>Salary Left(Salary - Monthly Payment): ₱${salLeft.toFixed(2)}`;
                 document.getElementById('result').innerHTML = resultText;
           
-                  FTotalInterest = totalInterest.toFixed(2);
-                FTotalAmount = totalAmount.toFixed(2);
+                 FTotalInterest = totalInterest.toFixed(2);
+                 FTotalAmount = totalAmount.toFixed(2);
                  FmonthlyPayment = monthlyPayment.toFixed(2);
+                 Fsal = salLeft.toFixed(2);
                 
                
-                
-
-
+            
             }
 
         
@@ -516,7 +502,8 @@
             }
 
             
-    
+
+           
 
 
 
@@ -525,25 +512,38 @@
                 const interestRate = parseFloat(document.getElementById('interestRate').value);
                 const loanTerm = parseFloat(document.getElementById('loanTerm').value);
                 const loanTermDays = parseFloat(document.getElementById('loanTermDays').value); // Assuming you have an input field for the loan term in days
+                const sal = parseFloat(document.getElementById('salary').options[document.getElementById('salary').selectedIndex].text);
 
-                const dailyPayment = calculateDailyRepayment(principal, interestRate, loanTermDays);
+
+
+                const dailyPayment = calculateDailyRepayment(principal, interestRate, loanTermDays,sal);
                 const totalPayment = dailyPayment * loanTermDays;
                 const totalInterest = totalPayment - principal;
                 const totalAmount = principal + totalInterest;
+                @* const balance = principal - sal; *@
+                const salLeft = sal - dailyPayment;
 
-                const resultText = `Daily Payment: ₱${dailyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}`;
+                
+
+
+
+                const resultText = `Daily Payment: ₱${dailyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}<br>Salary Left (Salary - Daily Payment): ₱${salLeft.toFixed(2)}`;
                 document.getElementById('result').innerHTML = resultText;
 
 
-                  FTotalInterest = totalInterest.toFixed(2);
-                FTotalAmount = totalAmount.toFixed(2);
+                FTotalInterest = totalInterest.toFixed(2);
+                 FTotalAmount = totalAmount.toFixed(2);
                  FmonthlyPayment = dailyPayment.toFixed(2);
+                 Fsal = salLeft.toFixed(2);
+
             }
 
             function calculateDailyRepayment(P, r, n) {
                 const dailyInterest = r / 365; // Assuming interest is calculated on a daily basis
                 const power = Math.pow(1 + dailyInterest, n);
                 const repayment = (P * dailyInterest * power) / (power - 1);
+            
+
                 return repayment;
             }
         </script>

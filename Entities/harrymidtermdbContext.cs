@@ -26,6 +26,7 @@ namespace HarryMidterm.Entities
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Orderdetail> Orderdetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<Stockhistory> Stockhistories { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -306,6 +307,27 @@ namespace HarryMidterm.Entities
                     .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("units");
+            });
+
+            modelBuilder.Entity<Schedule>(entity =>
+            {
+                entity.ToTable("schedule");
+
+                entity.Property(e => e.ScheduleId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ScheduleID");
+
+                entity.Property(e => e.AddloanrecordId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("addloanrecordID");
+
+                entity.Property(e => e.Date)
+                    .IsRequired()
+                    .HasMaxLength(250);
+
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(250);
             });
 
             modelBuilder.Entity<Stockhistory>(entity =>

@@ -17,5 +17,6 @@ namespace HarryMidterm.Entities
         public double? PaymentMonthsDays { get; set; }
         public double? TotalInterest { get; set; }
         public double? TotalAmount { get; set; }
+        public double? SalaryLeft { get; set; }
     }
 }
