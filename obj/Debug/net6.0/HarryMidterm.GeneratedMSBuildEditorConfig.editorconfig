@@ -8,285 +8,285 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HarryMidterm
 build_property.RootNamespace = HarryMidterm
-build_property.ProjectDir = c:\Users\Dell\Documents\CapstoneSystem\HarryDagooc\HarryMidterm\
+build_property.ProjectDir = C:\Users\Dell\Documents\CapstoneSystem\HarryDagooc\HarryMidterm\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Dell\Documents\CapstoneSystem\HarryDagooc\HarryMidterm
+build_property.MSBuildProjectDirectory = C:\Users\Dell\Documents\CapstoneSystem\HarryDagooc\HarryMidterm
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/BorrowerRecords.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/BorrowerRecords.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93ZXJcQm9ycm93ZXJSZWNvcmRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Create.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Delete.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93ZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Details.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93ZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Edit.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93ZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Partial/UpdateModal.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Borrower/Partial/UpdateModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93ZXJcUGFydGlhbFxVcGRhdGVNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Create.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Delete.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Partial/CreateCategory.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Partial/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcUGFydGlhbFxDcmVhdGVDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Update.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Category/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Client/Login.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Client/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Client/Register.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Client/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/CoopHome/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/CoopHome/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29vcEhvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/AddLoan.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/AddLoan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXEFkZExvYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/AllReports.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/AllReports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXEFsbFJlcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Capital.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Capital.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXENhcGl0YWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/DelinquentReports.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/DelinquentReports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXERlbGlucXVlbnRSZXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/ForgotPassword.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXEZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/HomePage.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/HomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXEhvbWVQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/LoanRecords.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/LoanRecords.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXExvYW5SZWNvcmRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/LoanReports.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/LoanReports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXExvYW5SZXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/LoanReportsDetails.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/LoanReportsDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXExvYW5SZXBvcnRzRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Merchandise.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Merchandise.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXE1lcmNoYW5kaXNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Partial/ModalRegister.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Partial/ModalRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFBhcnRpYWxcTW9kYWxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/PayLoan.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/PayLoan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFBheUxvYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Receipt.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Receipt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFJlY2VpcHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Register.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/SalesReports.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/SalesReports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFNhbGVzUmVwb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Signin.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/Signin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFNpZ25pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/TransactionReports.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/TransactionReports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFRyYW5zYWN0aW9uUmVwb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/ViewBalance.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/LoginPage/ViewBalance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5QYWdlXFZpZXdCYWxhbmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/newAPI/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/newAPI/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbmV3QVBJXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Create.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3Qm9ycm93ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Delete.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3Qm9ycm93ZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3Qm9ycm93ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Partial/ModalCreate.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Partial/ModalCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3Qm9ycm93ZXJcUGFydGlhbFxNb2RhbENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Partial/ModalUpdate.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Partial/ModalUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3Qm9ycm93ZXJcUGFydGlhbFxNb2RhbFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Update.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3Qm9ycm93ZXJcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/ViewBorrower.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/NewBorrower/ViewBorrower.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3Qm9ycm93ZXJcVmlld0JvcnJvd2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/AddStock.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/AddStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZGRTdG9jay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Create.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Delete.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Details.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Edit.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/IndexPartial.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/IndexPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXEluZGV4UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalAddCart.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalAddCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsQWRkQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalCartList.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalCartList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsQ2FydExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalCreatePartial.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalCreatePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsQ3JlYXRlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalDelete.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalProductInfo.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalProductInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsUHJvZHVjdEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalRecords.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalRecords.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsUmVjb3Jkcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalRecordsDetail.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalRecordsDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsUmVjb3Jkc0RldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalStock.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsU3RvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalStockHistory.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalStockHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsU3RvY2tIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalUpdatePartial.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/Partial/ModalUpdatePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQYXJ0aWFsXE1vZGFsVXBkYXRlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/StockHistory.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Product/StockHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTdG9ja0hpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Create.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Delete.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Index.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Update.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Register/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Shared/Error.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/_ViewImports.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/_ViewStart.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Shared/_Layout.cshtml]
+[C:/Users/Dell/Documents/CapstoneSystem/HarryDagooc/HarryMidterm/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-3x0091w2f8

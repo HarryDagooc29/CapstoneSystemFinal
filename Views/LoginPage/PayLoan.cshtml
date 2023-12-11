@@ -62,14 +62,13 @@
    
     <div class="form-grid">
     <div class="form-item">
-        <label for="date">Date Allocated</label>
-        <input type="text" class="form-control" id="date" placeholder="Date" name="Date" required asp-for="Date">
+        <label for="date">Date</label>
+        <input type="date" class="form-control" id="date" placeholder="Date" name="Date" required asp-for="Date">
     </div>
-    <div class="form-item">
-        <label for="loanrecordId">Borrower ID</label>
-        <input type="text" class="form-control" id="AddloanrecordID" name="AddloanrecordID" placeholder="Borrower ID" required
-            asp-for="addloanrecordID">
-    </div>
+  <div class="form-item">
+    <label for="loanrecordId">Borrower ID</label>
+    <input type="text" class="form-control" id="AddloanrecordID" name="AddloanrecordID" placeholder="Borrower ID" required asp-for="addloanrecordID" disabled>
+</div>
     <div class="form-item">
         <label class="control-label">Payment</label>
         @* <select asp-for="Payment" type="Number" id="payment" name="Payment" class="form-select"  placeholder="Payment"></select> *@
@@ -78,7 +77,8 @@
     </div>
     <div class="form-item">
         <label class="control-label">Balance</label>
-        <select asp-for="Balance" id="balance" name="Balance" class="form-select" placeholder="Balance"></select>
+        @* <select asp-for="Balance" id="balance" name="Balance" class="form-select" placeholder="Balance"></select> *@
+        <input type="number" name="Balance" id="balance "class="form-select" placeholder="Balance" disabled>
     </div>
 
     <div>
@@ -94,138 +94,38 @@
             <div>
                 <label class="control-label">Salary</label>
                 @* <select id="salary" class="form-select" name="Salary"></select> *@
-                <input type="number" name="Type" id="type" class="form-select" placeholder="Salary">
+                <input type="number" name="Type" id="type" class="form-select" placeholder="Salary" disabled>
             </div>
-            <div>
-                <label for="loanTermDays">Loan term in days:</label>
-                <input type="number" class="form-control" id="loanTermDays" placeholder="Enter loan term in days" required
-                    asp-for="LoanTermDays" name="LoanTermDays" oninput="calculateDaysRepayment()">
-            </div>
+       
 
             <div>
                 <label for="principal">Principal amount:</label>
                 <input  type="number" class="form-control" id="principal" step="0.01" placeholder="Enter principal amount" required
-                    asp-for="PrincipalAmount" name="PrincipalAmount" oninput="calculateRepayment()" min="3000">
+                    asp-for="PrincipalAmount" name="PrincipalAmount" oninput="calculateRepayment()" min="3000" disabled>
             </div>
 
             <div>
                 <label for="interestRate">Annual interest rate:</label>
                 <input type="number" class="form-control" id="interestRate" step="0.01" placeholder="Enter annual interest rate" required
-                    asp-for="AnnualInterestRate" name="AnnualInterestRate" oninput="calculateRepayment()">
+                    asp-for="AnnualInterestRate" name="AnnualInterestRate" oninput="calculateRepayment()" disabled>
+            </div>
+                 <div>
+                <label for="loanTermDays">Loan term in days:</label>
+                <input type="number" class="form-control" id="loanTermDays" placeholder="Enter loan term in days" required
+                    asp-for="LoanTermDays" name="LoanTermDays" oninput="calculateDaysRepayment()" disabled>
             </div>
 
             <div>
                 <label for="loanTerm">Loan term in months:</label>
                 <input name="LoanTermMonths" type="number" class="form-control" id="loanTerm" placeholder="Enter loan term in months" required
-                    asp-for="LoanTermMonths"  oninput="calculateRepayment()">
+                    asp-for="LoanTermMonths"  oninput="calculateRepayment()" disabled>
             </div>
 
             
-    <!-- Add more elements as needed -->
+
 </div>
 
-            @* <p id="result" name="PaymentMonthsDays"></p> *@
-
-
-            <script src="~/lib/jquery/dist/jquery.js"></script>
-            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-
-            <script>
-                document.getElementById('loanTerm').addEventListener('input', function () {
-                    var loanTermMonths = this.value;
-                    var loanTermDaysInput = document.getElementById('loanTermDays');
-
-                    if (loanTermMonths) {
-                        loanTermDaysInput.disabled = true;
-                        loanTermDaysInput.value = ""; // Clear the value if it was entered
-                    } else {
-                        loanTermDaysInput.disabled = false;
-                    }
-                });
-
-                document.getElementById('loanTermDays').addEventListener('input', function () {
-                    var loanTermDays = this.value;
-                    var loanTermMonthsInput = document.getElementById('loanTerm');
-
-                    if (loanTermDays) {
-                        loanTermMonthsInput.disabled = true;
-                        loanTermMonthsInput.value = ""; // Clear the value if it was entered
-                    } else {
-                        loanTermMonthsInput.disabled = false;
-                    }
-                });
-
-
-
-
-                $(document).ready(function () {
-    fname();
-
-    function fname() {
-        $.ajax("../api/newapi/getfname")
-            .done(function (result) {
-                var template = document.querySelector("template#fnameOptionTemplate");
-                var parent = document.querySelectorAll("#lname");
-
-                for (i = 0; i < parent.length; i++) {
-                    result.forEach(function (item) {
-                        var cloned = template.content.cloneNode(true);
-                        cloned.querySelector("option").value = item.lastName; // Use lastName for value
-                        cloned.querySelector("option").innerText = item.lastName;
-
-                        parent[i].prepend(cloned);
-                    });
-                }
-            });
-    }
-
-    const depSelect = document.querySelector("#lname");
-    const fSelect = document.querySelector("#fname");
-    const salarySelect = document.querySelector("#salary");
-
-    function populateResultSelect(selectedValue) {
-        $.ajax("../api/newapi/getfname")
-            .done(function (data) {
-                const datos = data.filter(item => item.lastName == selectedValue);
-
-                fSelect.innerHTML = "";
-                salarySelect.innerHTML = "";
-
-                datos.forEach((item) => {
-                    const option = document.createElement("option");
-                    option.value = item.lastName;
-                    option.innerText = item.salary;
-                    salarySelect.appendChild(option);
-                });
-
-                datos.forEach((item) => {
-                    const option = document.createElement("option");
-                    option.value = item.firstName; // Use firstName for value
-                    option.innerText = item.firstName;
-                    fSelect.appendChild(option);
-                });
-            });
-    }
-
-    populateResultSelect(depSelect.value);
-
-    depSelect.addEventListener("change", function () {
-        const selectedValue = this.value;
-        populateResultSelect(selectedValue);
-    });
-});
-////   dont touch it sugar mom
-
-
-
-
-            </script>
-
-
-
-            @* <button type="submit" class="btn btn-outline-warning buttonSave" title="Home"> <i class="fa-solid
-            fa-save" style="color: #4ac4b6;"></i> Save </button> *@
+          
            <center> <button type="submit" value="AddLoan" class="btn btn-outline-warning buttonSave" title="Save"
                 onclick="saveData()">
                 <i class="fa-solid fa-save" style="color: #4ac4b6;"></i> Save
@@ -235,20 +135,14 @@
 
 
 
-
 <style>
     body{
      background-color: #4aac5f;
 
     }
 </style>
-
-
 <script>
             function redirectToHome() {
-
-
-
 
                 // Display SweetAlert confirmation before redirecting
                 Swal.fire({

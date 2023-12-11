@@ -518,14 +518,14 @@ function merchandiseAlert() {
 <script>
 function reportsAlert() {
   Swal.fire({
-    title: 'Welcome to Loan Payment',
-    text: 'You have entered the Loan Payment page!',
+    title: 'Welcome to Loan Records',
+    text: 'You have entered the Loan Loan Records page!',
     icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
     confirmButtonText: 'OK'
   }).then((result) => {
     if (result.isConfirmed) {
       // Redirect the user to the new page
-      window.location.href = '/LoginPage/PayLoan';
+      window.location.href = '/LoginPage/LoanRecords';
     }
   }
   );

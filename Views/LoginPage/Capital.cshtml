@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,7 +108,7 @@
 
 
 <div>
-      <button type="button" onclick="redirectToHome()" class="btn btn-outline-warning buttonHome" title="Home"> 
+      <button type="submit" onclick="redirectToHome()" class="btn btn-outline-warning buttonHome" title="Home"> 
     <i class="fa-solid fa-house" style="color: #4ac4b6;"></i> Home
 </button>
 </div>
@@ -131,7 +132,7 @@
 
     <form id="loanForm" class="small-form" method="post">
         <input type="number" id="capitalAmount" placeholder="Enter capital amount" required style="width: 100%;" required asp-for="CapitalAmount">
-        <button type="button" value="Capital" onclick="applyCapital()" style="width: 100%;">Apply Now</button>
+        <button type="submit" value="Capital" onclick="applyCapital()" style="width: 100%;">Apply Now</button>
     </form>
     
 
