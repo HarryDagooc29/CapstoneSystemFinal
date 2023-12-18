@@ -1,4 +1,4 @@
-@model HarryMidterm.Entities.Addloanrecord
+@model HarryMidterm.Entities.Schedule
 
 
 @{
@@ -81,18 +81,18 @@
         </div>
         <div>
             <label for="Date">Date</label>
-            <input type="date" class="form-control" id="date" placeholder="Date" name="Date" required asp-for="Date">
+            <input type="text" class="form-control" id="date" placeholder="Date" name="Date" required asp-for="Date">
         </div>
 
 
          <div>
             <label for="Payment">Payment</label>
-            <input type="number" class="form-control" id="payment" placeholder="Payment" name="Payment" required asp-for="Payment" oninput="updateType()">
+            <input type="number" class="form-control" id="payment" placeholder="Payment" name="Payment" oninput="updateType()">
         </div>
 
          <div>
-            <label for="TotalAmount">Total Amount</label>
-            <input type="number" class="form-control" id="totalamount" placeholder="Total Amount" name="TotalAmount" required asp-for="TotalAmount" disabled>
+            <label for="balance">Balance</label>
+            <input type="number" class="form-control" id="totalamount" placeholder="Balance" name="Balance" required asp-for="Balance" disabled>
         </div>
 
         <div>
@@ -114,7 +114,7 @@
             </select>
         </div> *@
 
-        <center> <button type="submit" value="Payment" class="btn btn-outline-warning buttonSave " title="Save"
+        <center> <button type="button" value="Payment" class="btn btn-outline-warning buttonSave " title="Save"
                 onclick="submitForm()">
                 <i class="fa-solid fa-save" style="color: #4ac4b6;"></i> Save
             </button>
@@ -133,14 +133,15 @@
             const paymentType = document.getElementById('type').value;
             const addLRId = document.getElementById('borrowerId').value;
             const totalAmnt = document.getElementById('totalamount').value;
-            const balance = parseFloat(paymnt) - parseFloat(totalAmnt);
+            const balance = parseFloat(totalAmnt) - parseFloat(paymnt);
+            alert("hello")
 
             // Check if the loan amount is valid (you can add more validation here)
             //|| isNaN(paymnt)
             if (paymnt.trim() !== '') {
                 $.ajax
                 ({
-                    url: "../api/newapi/payLoanSchedule",
+                    url: "/api/newapi/payLoanSchedule",
                     type: "POST",
                     data:
                     {
@@ -149,10 +150,10 @@
                         addLRId : addLRId,
                         paymentType : paymentType,
                         totalAmnt : totalAmnt,
-                        balance : balance,
+                        balance : balance
                     },
                 })
-                .done(function () {
+                .done(function (res) {
 
                     // If the input is valid, show a confirmation popup
                     Swal.fire({
@@ -160,9 +161,10 @@
                         title: 'Payment Loan Submitted!',
                         text: `You have successfully applied for a loan amount of  ₱${paymnt}.`,
                     });
-                            
-
-                });
+                    console.log(res)
+                }).catch(e=>{
+                    console.log(e)
+                })
             }
             else if(paymnt.trim() === '' || isNaN(paymnt))
             {

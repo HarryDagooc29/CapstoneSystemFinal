@@ -265,8 +265,13 @@ namespace HarryMidterm.Controllers
     }
 
     // Find the specific loan record by id
-    var loanRecord = await _context.Addloanrecords
-        .FirstOrDefaultAsync(m => m.AddloanrecordId == id);
+    var loanRecord = await _context.Schedules
+    .OrderByDescending(m => m.ScheduleId)
+    .Where(s=>s.AddloanrecordId==id)
+    .FirstOrDefaultAsync();
+
+// Now, lastLoanRecord contains the very last item from the Schedules table based on ScheduleID
+
 
     if (loanRecord == null)
     {

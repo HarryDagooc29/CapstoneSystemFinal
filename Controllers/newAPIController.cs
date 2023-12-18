@@ -328,28 +328,57 @@ namespace sampleMVC.Controllers
         }
 
 
-          public IActionResult addloan(Addloanrecord addloan)
+        public async Task<IActionResult> addloan(Addloanrecord addloan)
         {
-           
-            _context.Addloanrecords.Add(addloan);
-            _context.SaveChanges();
+            // Add the Addloanrecord to the context and retrieve the entity
+            await _context.AddAsync(addloan);
+            AddLoanSchedule();
+            await _context.SaveChangesAsync();
+            // var record = new Schedule();
+            // record.AddloanrecordId = newLoanEntity.AddloanrecordId;
+            // record.Date = newLoanEntity.Date;
+            // record.Payment = 0;
+            // record.TotalAmount = newLoanEntity.TotalAmount??0;
+            // record.Balance = newLoanEntity.TotalAmount??0;
+
+            // _context.Schedules.Add(record);
+
+            // _context.SaveChanges();
             return Ok();
         }
 
-        public IActionResult payLoanSchedule(string dates, double paymnt, int addLRId, string paymentType, double totalAmnt, float balance)
+        void AddLoanSchedule(){
+            var latest_loan = _context.Addloanrecords.OrderByDescending(a=>a.AddloanrecordId).FirstOrDefault();
+
+            Schedule record = new Schedule();
+            record.AddloanrecordId = latest_loan.AddloanrecordId;
+            record.Date = latest_loan.Date;
+            record.Payment = 0;
+            record.TotalAmount = latest_loan.TotalAmount??0;
+            record.Balance = latest_loan.TotalAmount??0;
+            _context.Schedules.Add(record);
+
+            // _context.SaveChanges();
+        }
+
+
+        public IActionResult payLoanSchedule(string dates, double paymnt, int addLRId, string paymentType, double totalAmnt, double balance)
         {
             Schedule sched = new Schedule();
-            sched.Date = dates;
-            sched.Payment = paymnt;
-            sched.AddloanrecordId = addLRId;
-            sched.Type = paymentType;
-            sched.TotalAmount = totalAmnt;
-            sched.Balance = balance;
-
+            try{
+                sched.Date = dates;
+                sched.Payment = paymnt;
+                sched.AddloanrecordId = addLRId;
+                sched.Type = paymentType;
+                // sched.TotalAmount = balance;
+                sched.Balance = balance;
+            }catch(Exception e){
+                return new BadRequestObjectResult(e);
+            }
 
             _context.Schedules.Add(sched);
             _context.SaveChanges();
-            return Ok();
+            return Ok("Hello");
         }
 
 
