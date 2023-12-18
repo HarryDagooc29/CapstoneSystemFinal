@@ -14,8 +14,8 @@ using HarryMidterm.ViewModel;
 
 namespace HarryMidterm.Controllers
 {
-    [Route("[controller]")]
-    [Route("[controller]/[action]")]
+    // [Route("[controller]")]
+    // [Route("[controller]/[action]")]
     public class LoginPageController : Controller
     {
         private readonly ILogger<LoginPageController> _logger;
@@ -90,10 +90,8 @@ namespace HarryMidterm.Controllers
         //     return View("LoanReports");
         // }
 
-        public IActionResult TransactionReports()
-        {
-            return View("TransactionReports");
-        }
+
+
         public IActionResult DelinquentReports()
         {
             return View("DelinquentReports");
@@ -192,6 +190,8 @@ namespace HarryMidterm.Controllers
         // GET: Borrower/Details/5
         public async Task<IActionResult> LoanRecordsDetails(int? id)
         {
+
+        
             if (id == null)
             {   
                 return NotFound();
@@ -203,6 +203,8 @@ namespace HarryMidterm.Controllers
             {
                 return NotFound();
             }
+
+           
 
             return View(loanRecord);
         }
@@ -226,47 +228,108 @@ namespace HarryMidterm.Controllers
 
        
 
-         public async Task<IActionResult> ViewBalance(int? id)
-        {
-            return View();
+    
+//   THIS IS TO DISPLAY DATA 
+        public async Task<IActionResult> ViewBalance()
+{
+    // Assuming you want to retrieve a specific borrower's data, you may adjust the query accordingly
+    Schedule borrowerRecord = await _context.Schedules.FirstOrDefaultAsync();
 
+    // Check if a borrower record is found
+    if (borrowerRecord != null)
+    {
+        return View(borrowerRecord);
+    }
+    else
+    {
+        // Handle the case where no borrower record is found
+        return NotFound();
+    }
+}
+
+////////////////////////////////
+
+
+
+
+
+        
+
+          public async Task<IActionResult> PayLoan(int? id)
+        {
+    if (id == null)
+    {   
+        // If ID is not provided, return the list of all loan records
+        var loanRecordsList = await _context.Addloanrecords.ToListAsync();
+        return View("LoanRecords", loanRecordsList);
+    }
+
+    // Find the specific loan record by id
+    var loanRecord = await _context.Addloanrecords
+        .FirstOrDefaultAsync(m => m.AddloanrecordId == id);
+
+    if (loanRecord == null)
+    {
+        return NotFound();
+    }
+
+    // If ID is provided, return the details view for the specific loan record
+    return View(loanRecord);
+    }
+
+
+
+       public async Task<IActionResult> TransactionReports(int? id)
+        {
+            if (id == null)
+            {
+                // Display a list of all transactions
+                return View("TransactionReports", await _context.Schedules.ToListAsync());
+            }
+
+            // Display details of a specific transaction
+            var sched = await _context.Schedules
+                .FirstOrDefaultAsync(m => m.ScheduleId == id);
+
+            if (sched == null)
+            {
+                return NotFound();
+            }
+
+            return View(sched);
+        }
+
+
+       public async Task<IActionResult> TransctionDetails(int? id)
+        {
+            if (id == null)
+            {
+                // Display a list of all transactions
+                return View("TransctionDetails", await _context.Schedules.ToListAsync());
+            }
+
+            // Display details of a specific transaction
+            var sched = await _context.Schedules
+                .FirstOrDefaultAsync(m => m.ScheduleId == id);
+
+            if (sched == null)
+            {
+                return NotFound();
+            }
+
+            return View(sched);
         }
 
         
+   
+ 
 
-          public async Task<IActionResult> PayLoan()
-        {
 
-              var res = 
-            (
-                from c in _context.Addloanrecords
-                join p in _context.Schedules
-                on c.AddloanrecordId equals p.ScheduleId
-
-                select new PPayment
-                {
-                    
-                    ScheduleID = c.AddloanrecordId,
-                    LoanTermDays = c.LoanTermDays,
-                    LoanTermMonths = c.LoanTermMonths,
-                    PrincipalAmount = c.PrincipalAmount,
-                    AnnualInterestRate = c.AnnualInterestRate,
-                    addloanrecordID = p.ScheduleId,
-                    Date = p.Date,
-                    Payment = p.Payment,
-                    Balance = p.Balance,
-                    Type = p.Type
-                }
-            ).ToList();
-
-           return View(res.FirstOrDefault());
-          
-        }
-
+       
         
 
         
-
+      
        
 
            

@@ -4,7 +4,13 @@
     ViewData["Title"] = "Create";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmp/D1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 <h2 style="color: white;">Add Employee-Borrower Information</h2>
@@ -125,6 +131,13 @@
                     </div>
                     
                 </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Capital" class="control-label"></label>
+                        <input asp-for="Capital" class="form-control" />
+                        <span asp-validation-for="Capital" class="text-danger"></span>
+                    </div>
+                </div>
 
                  <div class="col-sm-6">
                     <div class="form-group">
@@ -143,12 +156,21 @@
                 </div>
 
                  
+
+                 
                 @* Border *@
 
 
                 <div class="form-group ">
-                    <input type="submit" value="Create" class="btn btn-outline-warning create" />
-                    @* <button class="button" type="submit">Submit</button> *@
+                    @* <input type="submit" value="Create" class="btn btn-outline-warning create" />
+                    <i class="fa-solid fa-square-plus"></i> *@
+
+                    <button type="submit" class="btn btn-outline-warning create"> <i class="fa-solid fa-square-plus"></i>
+                    Create
+                    </button>
+
+
+              
 
                 </div>
             </div>
@@ -159,10 +181,9 @@
     <div>
 
         <div>
-            <button type="button" onclick="location.href='/Borrower/Index'" class="btn btn-outline-warning back"> 
-            Back
-            to
-            List</button>
+            <button type="button" onclick="location.href='/Borrower/Index'" class="btn btn-outline-warning backMove"> 
+            <i
+            class="fa-solid fa-backward" style="color: #4ac4b6;"></i> Back</button>
         </div>
 
 
@@ -171,13 +192,19 @@
             body {
 
 
-                background-image: url("../../building.png");
-                background-size: cover;
+                @* background-image: url("../../building.png");
+                background-size: cover; *@
+                 background-color: #4aac5f;
             }
 
             .crmcPic {
                 position: absolute;
             }
+             .backMove {
+        position: absolute;
+        top: 10px;
+        left: 1290px;
+    }
 
             .back {
                 position: absolute;
@@ -188,7 +215,7 @@
             .create {
                 position: absolute;
                 top: 10px;
-                left: 1200px;
+                left: 1190px;
             }
 
             .row {

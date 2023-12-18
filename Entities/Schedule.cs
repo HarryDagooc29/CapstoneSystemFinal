@@ -7,9 +7,10 @@ namespace HarryMidterm.Entities
     {
         public int ScheduleId { get; set; }
         public string Date { get; set; }
-        public int AddloanrecordId { get; set; }
         public double? Payment { get; set; }
-        public double? Balance { get; set; }
+        public double TotalAmount { get; set; }
+        public double Balance { get; set; }
+        public int AddloanrecordId { get; set; }
         public string Type { get; set; }
     }
 }

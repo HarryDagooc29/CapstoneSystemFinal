@@ -1,4 +1,4 @@
-@model HarryMidterm.Entities.Addloanrecord
+@model HarryMidterm.Entities.Schedule
 
 
 
@@ -9,20 +9,19 @@
 <link rel="stylesheet" href="path/to/sweetalert.css">
 <script src="path/to/sweetalert.min.js"></script>
   <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="fontSize text-center">
-        <b>Welcome John Harry Dagooc!</b>
-    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fontSize text-center">
+                     <b>Welcome Borrower!</b>
+               </div>
+            </div>
         </div>
-    </div>
-    </div>  
+  </div>  
 
     
 
 
 <div class="topMostLayer">
-
 
     <div class="colorMe">
         <center>
@@ -30,25 +29,29 @@
         </center>
         <hr />
         <dl class="row">
-            <dt class="col-sm-3">Last Name</dt>
-            <dd class="col-sm-3">@Html.DisplayFor(model => model.LastName)</dd>
 
+            <dt class="col-sm-3">Borrower ID</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.AddloanrecordId)</dd>
 
-            <dt class="col-sm-3">First Name</dt>
-            <dd class="col-sm-3">@Html.DisplayFor(model => model.FirstName)</dd>
+            <dt class="col-sm-3">Date</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.Date)</dd>
 
-            <dt class="col-sm-3">Middle Name</dt>
-            <dd class="col-sm-3">@Html.DisplayFor(model => model.PaymentStartDate)</dd>
+            <dt class="col-sm-3">Payment</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.Payment)</dd>
 
-            <dt class="col-sm-3">Birth Date</dt>
-            <dd class="col-sm-3">@Html.DisplayFor(model => model.PrincipalAmount)</dd>
-
-            <dt class="col-sm-3">Birth Place</dt>
+            <dt class="col-sm-3">Total Amount</dt>
             <dd class="col-sm-3">@Html.DisplayFor(model => model.TotalAmount)</dd>
 
-            
+            <dt class="col-sm-3">Balance</dt>
+            <dd class="col-sm-3">@Html.DisplayFor(model => model.Balance)</dd>
+
 
         </dl>
+    </div>
+</div>
+
+    <div>
+       <center> <h1> Put Table Container Here and Display user Transaction  <h1></center>
     </div>
 
 

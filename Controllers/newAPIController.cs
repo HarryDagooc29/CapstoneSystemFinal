@@ -336,6 +336,21 @@ namespace sampleMVC.Controllers
             return Ok();
         }
 
+        public IActionResult payLoanSchedule(string dates, double paymnt, int addLRId, string paymentType, double totalAmnt, float balance)
+        {
+            Schedule sched = new Schedule();
+            sched.Date = dates;
+            sched.Payment = paymnt;
+            sched.AddloanrecordId = addLRId;
+            sched.Type = paymentType;
+            sched.TotalAmount = totalAmnt;
+            sched.Balance = balance;
+
+
+            _context.Schedules.Add(sched);
+            _context.SaveChanges();
+            return Ok();
+        }
 
 
 

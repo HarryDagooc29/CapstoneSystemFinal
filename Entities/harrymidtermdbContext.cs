@@ -69,7 +69,7 @@ namespace HarryMidterm.Entities
                     .HasColumnType("int(11)")
                     .HasColumnName("addloanrecordID");
 
-                entity.Property(e => e.DateAllocated)
+                entity.Property(e => e.Date)
                     .IsRequired()
                     .HasMaxLength(250);
 
@@ -84,8 +84,6 @@ namespace HarryMidterm.Entities
                 entity.Property(e => e.LoanTermDays).HasMaxLength(250);
 
                 entity.Property(e => e.LoanTermMonths).HasMaxLength(250);
-
-                entity.Property(e => e.PaymentStartDate).HasMaxLength(250);
 
                 entity.Property(e => e.PrincipalAmount).HasColumnType("int(250)");
             });

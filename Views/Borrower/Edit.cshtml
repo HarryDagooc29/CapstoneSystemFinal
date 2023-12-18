@@ -131,6 +131,13 @@
                 </div>
 
                 <div class="col-sm-6">
+                    <label asp-for="Capital" class="control-label" style="color: white;"></label>
+                    <input asp-for="Capital" class="form-control"  />
+                    <input asp-for="Capital" class="form-control" hidden />
+                    <span asp-validation-for="Capital" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-6">
                     <label asp-for="Username" class="control-label" style="color: white;"></label>
                     <input asp-for="Username" class="form-control"  />
                     <input asp-for="Username" class="form-control" hidden />

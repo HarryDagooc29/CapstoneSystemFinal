@@ -8,8 +8,7 @@ namespace HarryMidterm.Entities
         public int AddloanrecordId { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string DateAllocated { get; set; }
-        public string? PaymentStartDate { get; set; }
+        public string Date { get; set; }
         public int PrincipalAmount { get; set; }
         public double AnnualInterestRate { get; set; }
         public string? LoanTermMonths { get; set; }
@@ -18,5 +17,6 @@ namespace HarryMidterm.Entities
         public double? TotalInterest { get; set; }
         public double? TotalAmount { get; set; }
         public double? SalaryLeft { get; set; }
+        public double? Payment { get; set; }
     }
 }

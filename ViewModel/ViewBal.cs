@@ -1,11 +1,25 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace HarryMidterm.Entities
+namespace HarryMidterm.ViewModel
 {
-    public partial class Newborrower
+    public class ViewBalance
     {
+ 
+
+      
         public int NewBorrowerId { get; set; }
+        public int AddloanrecordId { get; set; }
+
+
+
+
+
+        // new borrower
+
+      
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -22,5 +36,20 @@ namespace HarryMidterm.Entities
         public double Capital { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+
+
+       // schedule
+        public int ScheduleId { get; set; }
+        public string Date { get; set; }
+        public double? Payment { get; set; }
+        public double TotalAmount { get; set; }
+        public double Balance { get; set; }
+        public string Type { get; set; }
+
+
+
+         
+     
     }
 }

@@ -9,6 +9,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
+
+
+
 <style>
     body {
         background-color: #4aac5f;
@@ -126,7 +129,7 @@
                     confirmButtonText: 'Yes, go to Loan Records!',
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        // If confirmed, redirect to the home page
+                        // If confirmed, redirect to the home page  
                         window.location.href = '/LoginPage/LoanRecords';
                     }
                 });
@@ -203,14 +206,14 @@
         <form id="loanForm" method="post">
 
             <div>
-                <label for="date">Date Allocated</label>
-                <input type="date" id="date" placeholder="Date Allocation" name="DateAllocated" required asp-for="DateAllocated">
+                <label for="Date">Date</label>
+                <input type="date" id="date" placeholder="Date" name="Date" required asp-for="Date">
             </div>
-            <div>
+            @* <div>
                 <label for="paymentStart">Payment Start Date</label>
                 <input type="date" id="paymentStart" name="PaymentStartDate" placeholder="Payment Start Date" required
                     asp-for="PaymentStartDate">
-            </div>
+            </div> *@
             <div>
                 <label class="control-label">Last Name</label>
                 <select asp-for="LastName" id="lname" name="LastName" class="form-select"></select>
@@ -225,7 +228,6 @@
                 <label class="control-label">Salary</label>
                 <select id="salary" class="form-select" name="Salary"></select>
             </div>
-
 
 
             <div>
@@ -250,6 +252,12 @@
                 <input type="number" id="loanTermDays" placeholder="Enter loan term in days" required
                     asp-for="LoanTermDays" name="LoanTermDays" oninput="calculateDaysRepayment()">
             </div>
+@* 
+             <div>
+                <label for="Proceeds">Proceeds</label>
+                <input type="number" id="proceeds" placeholder="Proceeds" required
+                    asp-for="Proceeds" name="Proceeds" oninput="calculateDaysRepayment()">
+            </div> *@
 
             @* <p id="result" name="PaymentMonthsDays"></p> *@
 
@@ -375,6 +383,7 @@
             var FTotalAmount;
              var FmonthlyPayment;
              var Fsal;
+             @* var Fpcds; *@
 
 
             function saveData() {
@@ -402,6 +411,8 @@
              arrData.TotalInterest  =  FTotalInterest;
              arrData.TotalAmount =  FTotalAmount;
              arrData.SalaryLeft =  Fsal;
+             @* arrData.Proceeds = Fpcds; *@
+             //arrData.AddloanrecordId = ;
 
 
 
@@ -412,7 +423,7 @@
              
                 if (formInputs[0].value !== '' && formInputs[1].value !== '' && formInputs[2].value !== '' && formInputs[3].value !== '' && formInputs[1].value !== '' && formInputs[1].value !== '' && formInputs[4].value !== '' && formInputs[5].value !== '' && formInputs[6].value !== '') {
 
-
+                
                  $.ajax
                         ({
                             url: "../api/newapi/addloan",
@@ -464,18 +475,22 @@
                 const interestRate = parseFloat(document.getElementById('interestRate').value);
                 const loanTerm = parseFloat(document.getElementById('loanTerm').value);
                 const loanTermDays = parseFloat(document.getElementById('loanTerm').value);
-                @* const sal = parseFloat(document.getElementById('salary').value); *@
+                @* const proc = parseFloat(document.getElementById('proceeds').value); *@
+               // @* const sal = parseFloat(document.getElementById('salary').value); *@
                 const sal = parseFloat(document.getElementById('salary').options[document.getElementById('salary').selectedIndex].text);
 
                
 
                 const monthlyPayment = calculateMonthlyRepayment(principal, interestRate, loanTerm,sal);
-                const totalPayment = monthlyPayment * loanTerm;
-                const totalInterest = totalPayment - principal;
+                const totalPayment = monthlyPayment * loanTerm; //diri ge kuha ang Interest
+                const totalInterest = totalPayment - principal; //ge display ang interest
                 const totalAmount = principal + totalInterest;
-                @* const balance = principal - sal - totalInterest; *@
+                const balance = principal - sal - totalInterest;
                 const salLeft = sal - monthlyPayment;
+                @* const serviceFee = principal * 0.0125;
+                const pcds = principal - serviceFee - totalInterest; *@
 
+                
 
               
 
@@ -487,6 +502,8 @@
                  FTotalAmount = totalAmount.toFixed(2);
                  FmonthlyPayment = monthlyPayment.toFixed(2);
                  Fsal = salLeft.toFixed(2);
+                 @* Fpcds = pcds.toFixed(2); *@
+
                 
                
             
@@ -495,10 +512,11 @@
         
 
             function calculateMonthlyRepayment(P, r, n) {
-                const monthlyInterest = r / 12; // Assuming the interest is an annual rate
+                     const monthlyInterest = r / 12; // Assuming the interest is an annual rate r * principal * loanTerm
                 const power = Math.pow(1 + monthlyInterest, n);
                 const repayment = (P * monthlyInterest * power) / (power - 1);
                 return repayment;
+               
             }
 
             
@@ -519,15 +537,20 @@
                 const dailyPayment = calculateDailyRepayment(principal, interestRate, loanTermDays,sal);
                 const totalPayment = dailyPayment * loanTermDays;
                 const totalInterest = totalPayment - principal;
-                const totalAmount = principal + totalInterest;
-                @* const balance = principal - sal; *@
+                const totalAmount = principal + totalInterest; //(Principal + Interest)
+                const balance = principal - sal;
                 const salLeft = sal - dailyPayment;
+                @* const serviceFee = principal * 0.0125;
+                const pcds = principal - serviceFee - totalInterest; *@
 
                 
 
 
 
-                const resultText = `Daily Payment: ₱${dailyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}<br>Salary Left (Salary - Daily Payment): ₱${salLeft.toFixed(2)}`;
+                @* const resultText = `Daily Payment: ₱${dailyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}<br>Salary Left (Salary - Daily Payment): ₱${salLeft.toFixed(2)}<br>Proceeds ₱${pcds.toFixed(2)}`;
+                document.getElementById('result').innerHTML = resultText; *@
+
+                 const resultText = `Daily Payment: ₱${dailyPayment.toFixed(2)}<br>Total Interest: ₱${totalInterest.toFixed(2)}<br>Total Amount (Principal + Interest): ₱${totalAmount.toFixed(2)}<br>Salary Left (Salary - Daily Payment): ₱${salLeft.toFixed(2)}`;
                 document.getElementById('result').innerHTML = resultText;
 
 
@@ -535,6 +558,8 @@
                  FTotalAmount = totalAmount.toFixed(2);
                  FmonthlyPayment = dailyPayment.toFixed(2);
                  Fsal = salLeft.toFixed(2);
+                 Fpcds = pcds.toFixed(2);
+
 
             }
 
@@ -545,6 +570,7 @@
             
 
                 return repayment;
+                
             }
         </script>
 

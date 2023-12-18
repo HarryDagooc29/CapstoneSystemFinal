@@ -1,51 +1,342 @@
+@model IEnumerable<HarryMidterm.Entities.Schedule>
+
+
+
+@{
+    ViewData["Title"] = "LoanReports";
+}
+
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+<html>
+   
+    <script>
+      
+    $(document).ready(function () {
+        $('.tableContainer').DataTable({
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "searching": true
+        });
+    });
+</script>
+
+</html>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
   integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-@* <button type="button" onclick="location.href='AllReports'" class="buttonBack"> Back</button> *@
+<center>
+<h1 style="color: white;" class="colorMe">Transaction</h1>
 
- <button type="button" onclick="location.href='AllReports'" class="btn btn-outline-warning backMove" title="Back"> <i class="fa-solid fa-backward" style="color: #4ac4b6;"></i></button>
+</center>
+
+
+<p>
+    
+    <button type="button" onclick="location.href='/LoginPage/HomePage'" class="btn btn-outline-warning buttonLoanRecord" title="Loan Records"> <i class="fa-solid fa-home" style="color: #4ac4b6;"></i> Home </button>
+     <style>
+       
+        .colorMe{
+            top: 10px;
+            position: relative;
+            background-color: #307d41;
+            width: 1400px;
+            border-radius: 7px;
+            color: white;
+       
+        }
+        .loanMove{
+            position: absolute;
+            top: 70px;
+            left: 1365px;
+            height: 50px;
+        }
+        .buttonLoanRecord{
+             position: absolute;
+                top: 70px;
+            font-size: 25px;
+        }
+       
+        
+
+        
+     </style>
+</p>
+
+
+<div class="tumoy">
+    <!-- Dropdown -->
+
+<label for="startDate">From Date:</label>
+<input type="date" id="startDate" />
+<label for="endDate">To Date:</label>
+<input type="date" id="endDate" />
+<button id="clearButton" class="btn" style="background-color: #1d4533; color: white;">Clear</button>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Add an event listener to the date inputs
+        $("#startDate, #endDate").change(function () {
+            filterTable();
+        });
+
+        // Add an event listener to the Clear button
+        $("#clearButton").click(function () {
+            // Reset input fields
+            $("#startDate, #endDate").val('');
+            
+            // Show all rows
+            $(".payment-row").show();
+        });
+
+
+    });
+
+    function filterTable() {
+        // Get the selected start and end dates
+        var startDate = new Date($("#startDate").val());
+        var endDate = new Date($("#endDate").val());
+
+        // Loop through each payment row
+        $(".payment-row").each(function () {
+            // Get the payment start date from the current row
+            var paymentStartDate = new Date($(this).find("td:eq(0)").text().trim());
+
+            // Check if the payment start date is within the selected date range
+            if (isDateInRange(paymentStartDate, startDate, endDate)) {
+                // Show the row if it's within the range
+                $(this).show();
+            } else {
+                // Hide the row if it's outside the range
+                $(this).hide();
+            }
+        });
+    }
+
+    function isDateInRange(dateToCheck, startDate, endDate) {
+        // Check if the date is within the range
+        return dateToCheck >= startDate && dateToCheck <= endDate;
+    }
+
+
+
+</script>
+
+
+
+@* <label for="dropdown">Select an option:</label>
+
+<select id="dropdown"></select> *@
+
+
+
+<table class="tableContainer" style="border-radius: 10px; " id="example">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.AddloanrecordId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Payment)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount)
+            </th>
+         
+          
+         
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="payment-row">
+                 <td>
+                    @Html.DisplayFor(modelItem => item.AddloanrecordId)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+
+                <td id="paymentValue">
+                    @Html.DisplayFor(modelItem => item.Payment)
+                </td>
+
+
+
+                <td id="paymentValue">
+                    @Html.DisplayFor(modelItem => item.Balance)
+                </td>
+
+                 <td id="paymentValue">
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+
+              
+                
+                <td>
+                  <button type="button" onclick="location.href='@Url.Action("TransactionDetails", new { id = item.AddloanrecordId })'" class="btn btn-success" title="Transaction Report">
+                   <i class="fa-regular fa-clipboard" Style="color: #1d4533;"></i>
+                </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>
+<script>
+    
+    var paymentValue = document.getElementById('paymentValue').innerText.trim();
+    console.log(paymentValue);
+
+    // Using jQuery
+    var paymentValueWithJQuery = $('#paymentValue').text().trim();
+    console.log(paymentValueWithJQuery);
+    
+</script>
+
+<script>
+$(document).ready(function() {
+  // Initialize DataTable
+  var dataTable = $('#example').DataTable();
+
+  // Populate dropdown with unique values from the first column
+  var dropdown = $('#dropdown');
+  dataTable.rows().every(function(index, element) {
+    var rowData = this.data();
+    var optionText = rowData[0]; // Assuming the first column contains the desired dropdown values
+    dropdown.append($('<option>').text(optionText));
+  });
+
+  // Add event listener to the dropdown for filtering DataTable
+  dropdown.on('change', function() {
+    var selectedValue = $(this).val();
+    dataTable.search(selectedValue).draw();
+  });
+});
+</script>   
+
+ <div id="receipt">
+       
+    </div>
+  
+
+    
+
+      <script> 
+        function applyDateFilter(event) {
+            event.preventDefault();
+
+            // Get values from date input fields
+            var fromDate = document.getElementById('fromDate').value;
+            var toDate = document.getElementById('toDate').value;
+
+            // You can use fromDate and toDate to filter receipts or perform other actions
+            // For this example, we'll just display a message in the receipt div
+            var receiptDiv = document.getElementById('receipt');
+            receiptDiv.innerHTML = `<p class="hi">Filter applied from ${fromDate} to ${toDate}</p>`;
+
+            // Show the receipt div
+            receiptDiv.style.display = 'block';
+        }
+
+       
+    </script>
+ 
 
 <style>
-     .backMove{
-         position: absolute;
-        top: 10px;
-       
-    }
-  body{
-     background-image: url("../../building.png");
-    background-size: cover;
-  }
-     .buttonBack{
-      position: relative;
-      top: 10px;
-      left: 0px;
-      font-size: 25px;
-      border: 5px solid green;
-      border-radius: 8px;
-      background-color: teal;
-      width: 10rem;
-      height: 3rem;
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1.2125;
-      color: #ffffff;
-      font-family: Inter, 'Source Sans Pro';
-      white-space: nowrap;
-      align-items: center;
-      justify-content: center;
-      background-color: #3f9d54;
-      border-radius: 1rem;
-    }
-      .buttonBack:hover {
-  background-color: white; 
-  color: black;
+     body{
 
+
+     background-color: #4aac5f;
+    
+    }
+
+   .tableContainer {
+    
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    @* background-color: teal; *@
+  
 }
+
+.tableContainer table {
+    border-collapse: collapse;
+    padding-right:-100px;
+    
+}
+
+@* .tableContainer table th, .tableContainer table td {
+    
+    padding: 8px;
+    border: 1px solid white;
+    text-align: left;
+} *@
+ th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+
+
+.tableContainer table tr:hover {
+    
+    
+    color: teal; /* You may need to adjust the text color for better visibility */
+}
+
+
+
+    
+    .tumoy{
+            
+        padding-top: 80px;
+        
+        
+    }
+    
+   
 </style>
+
+
+
+
+
