@@ -326,7 +326,10 @@ namespace HarryMidterm.Controllers
         }
 
         
-   
+    public IActionResult MasterList()
+        {
+            return View("MasterList");
+        }
  
 
 

@@ -572,6 +572,26 @@ function reportsAlert() {
   );
 }
 </script>
+
+
+<script>
+function masterListAlert() {
+  Swal.fire({
+    title: 'Welcome to Master List',
+    text: 'You have entered the Master List page!',
+    icon: 'success', // You can change the icon to 'success', 'info', 'warning', or 'error'.
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect the user to the new page
+      window.location.href = '/LoginPage/MasterList';
+    }
+  }
+  );
+}
+</script>
+
+
   
 
   
@@ -581,9 +601,9 @@ function reportsAlert() {
     💳   
       </div>
 
-         <button type="button" onclick="reportsAlert()" class="buttonMasterList">Master
+         <button type="button" onclick="masterListAlert()" class="buttonMasterList">Master
         <br>List</button>
-      <div class="masterListIcon" type="button" onclick="reportsAlert()">
+      <div class="masterListIcon" type="button" onclick="masterListAlert()">
     📋   
       </div>
      
