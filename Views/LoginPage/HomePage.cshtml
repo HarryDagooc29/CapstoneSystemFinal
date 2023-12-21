@@ -76,10 +76,10 @@
               top: ;
               left: -40px;
             }
-            .capitalIcon{
+            .recordIcon{
               position: absolute;
               cursor: pointer;
-              left: 60px;
+              left: 50px;
               top: 130px;
               font-size: 50px;
             }
@@ -87,14 +87,14 @@
               position: absolute;
               cursor: pointer;
               left: 60px;
-              top: 438px;
+              top: 410px;
               font-size: 40px;
             }
             .loanIcon{
                position: absolute;
               cursor: pointer;
               left: 60px;
-              top: 338px;
+              top: 315px;
               font-size: 40px;
             }
           </style>
@@ -124,7 +124,7 @@
   </button>
   
 </div>
-      <div class="capitalIcon" type="button" onclick="capitalAlert()">
+      <div class="recordIcon" type="button" onclick="capitalAlert()">
       📜
       </div>
 
@@ -188,7 +188,7 @@ function addLoanRecordsAlert() {
         .buttonAddLoanRecords
         {
         position: absolute;
-          top: 333px;
+          top: 310px;
           left: 44px;
           font-size: 25px;
           border: 5px solid green;
@@ -313,7 +313,7 @@ function addLoanRecordsAlert() {
         }
         .buttonMerchandise {
           position: absolute;
-          top: 433px;
+          top: 400px;
           left: 44px;
           font-size: 25px;
           border: 5px solid green;
@@ -372,7 +372,7 @@ function addLoanRecordsAlert() {
         .buttonLoanRecords {
           position: absolute;
           text-decoration: none;
-          top: 233px;
+          top: 220px;
           left: 44px;
           
           border: 5px solid green;
@@ -401,7 +401,7 @@ function addLoanRecordsAlert() {
         .buttonTransac {
           position: absolute;
           text-decoration: none;
-          top: 533px;
+          top: 490px;
           left: 44px;
           @* font-size: 20px; *@
           border: 5px solid green;
@@ -427,6 +427,36 @@ function addLoanRecordsAlert() {
           color: black;
 
         }
+
+        .buttonMasterList {
+          position: absolute;
+          text-decoration: none;
+          top: 580px;
+          left: 44px;
+          @* font-size: 20px; *@
+          border: 5px solid green;
+          border-radius: 8px;
+          background-color: teal;
+          width: 29.6rem;
+          height: 7.8rem;
+          font-size: 2rem;
+          font-weight: 600;
+          line-height: 1.2125;
+          color: #ffffff;
+          font-family: Inter, 'Source Sans Pro';
+          white-space: nowrap;
+          align-items: center;
+          justify-content: center;
+     
+          background-color: #3f9d54;
+          border-radius: 1rem;
+        }
+
+        .buttonMasterList:hover {
+          background-color: white;
+          color: black;
+
+        }
         .moveMe{
           position: absolute;
           font-size: 20px;
@@ -437,7 +467,7 @@ function addLoanRecordsAlert() {
            position: absolute;
               cursor: pointer;
               left: 60px;
-              top: 240px;
+              top: 227px;
               font-size: 40px;
 
         }
@@ -445,10 +475,18 @@ function addLoanRecordsAlert() {
            position: absolute;
               cursor: pointer;
               left: 60px;
-              top: 538px;
+              top: 495px;
               font-size: 40px;
         }
-        
+
+          .masterListIcon{
+           position: absolute;
+              cursor: pointer;
+              left: 60px;
+              top: 585px;
+              font-size: 40px;
+        }
+      
       </style>
 
      
@@ -542,7 +580,16 @@ function reportsAlert() {
       <div class="reportsIcon" type="button" onclick="reportsAlert()">
     💳   
       </div>
+
+         <button type="button" onclick="reportsAlert()" class="buttonMasterList">Master
+        <br>List</button>
+      <div class="masterListIcon" type="button" onclick="reportsAlert()">
+    📋   
+      </div>
      
+
+
+
 
 
 
@@ -562,7 +609,7 @@ function reportsAlert() {
 
         .tableContainer {
           position: absolute;
-          top: 488px;
+          top: 466px;
 
 
         }
@@ -704,13 +751,14 @@ function reportsAlert() {
     box-sizing: border-box;
     padding: 1.1rem 0.8rem 3.3rem 4rem;
     width: 38.2rem;
-    height: 69rem;
+    height: 67rem;
     align-items: center;
     display: flex;
     flex-direction: column;
     background-color: #307d41;
     border-radius: 1rem;
     flex-shrink: 0;
+    
   }
 
   .homepage-mus .auto-group-qkgm-Ah7 .auto-group-n425-Nwb {
@@ -817,6 +865,7 @@ function reportsAlert() {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+  
   }
 
   .homepage-mus .auto-group-f62d-F7X .auto-group-urdk-B1B {

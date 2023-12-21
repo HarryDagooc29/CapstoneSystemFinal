@@ -90,7 +90,11 @@
             font-size: 25px;
             background-color: green;
         }
-      
+        .labelRight{
+            position: absolute;
+            top: 160px;
+            left: 800px;
+        }
     </style>
 </head>
 
@@ -166,12 +170,14 @@
 
         <style>
             #loanForm {
+                position:absolute;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
                 max-width: 600px;
                 /* Adjust the maximum width as needed */
                 margin: 0 auto;
+                left: 250px;
             }
 
             #loanForm label {
@@ -370,7 +376,7 @@
         <br>
 
 
-        <form method="post">
+        <form method="post" class="labelRight">
 
             <p id="result" name="PaymentMonthsDays"></p>
 
